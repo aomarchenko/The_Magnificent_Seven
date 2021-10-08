@@ -12,10 +12,24 @@
     />
   </head>
   <body>
-    <!-- Так добавляются фрагменты в главные HTML-файлы страниц. -->
-    <!-- <include src="./partials/example.html"></include> -->
-
-    <!-- Скрипт идёт последним в разметке. В нём уже подключен главный SASS-файл. -->
-    <script src="./index.js"></script>
+    <li class="movie__movie">
+      <a class="movie__link" href="">
+          <div class="movie__thumb">
+              <img class="movie__img" 
+              srcset="
+              ./images/demo.jpg 1x,
+              ./images/demo.jpg 2x"
+              src="./images/demo.jpg" 
+              alt="" 
+              width="274" 
+              height="398">
+          </div>
+          <div class ="movie__text"> 
+              <h2 class="movie__title">GREYHOUND </h2>
+              <p class="movie__genre">Drama, Action <span class="movie___delimiter">|</span> 2020</p>
+          </div>
+      </a>
+  </li>
+     <script src="./index.js"></script>
   </body>
 </html>
