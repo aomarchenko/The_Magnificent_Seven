@@ -1,5 +1,7 @@
 // Нормалайзер, стили, шрифты
-@import 'modern-normalize/modern-normalize.css';
+@import 'node_modules/modern-normalize/modern-normalize.css';
+@import './base/breakpoints';
 @import './base/fonts';
 @import './base/common';
-@import './base/common';
+@import './base/container';
+@import './base/vars';
