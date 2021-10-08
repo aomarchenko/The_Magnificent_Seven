@@ -22,16 +22,14 @@
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-// .movie__link:hover,
-// .movie__link:focus {
-//   box-shadow: 0 4px 4px 0 $primaryTextColor;
-// }
+.movie__link:hover,
+.movie__link:focus {
+  box-shadow: 0 4px 4px 0 #757575;
+}
 
 .movie__text {
   padding-top: 10px;
-}
-.movie__title,
-.movie__genre {
+
   font-weight: $font-weight;
   font-size: $font-size;
   line-height: $line-height;
