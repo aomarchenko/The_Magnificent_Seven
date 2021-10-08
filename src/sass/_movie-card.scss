@@ -1,1 +1,48 @@
+.movie__item {
+  &:not(:last-child) {
+    @media screen and (max-width: $to-tablet) {
+      margin-bottom: 30px;
+    }
+  }
 
+  @media screen and (min-width: $tablet) {
+    flex-basis: calc((100% - 2 * 30px) / 2);
+    margin-left: 30px;
+    margin-top: 30px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    flex-basis: calc((100% - 90px) / 3);
+    margin-left: 30px;
+    margin-top: 30px;
+  }
+}
+.movie__item > a {
+  display: block;
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+// .movie__link:hover,
+// .movie__link:focus {
+//   box-shadow: 0 4px 4px 0 $primaryTextColor;
+// }
+
+.movie__text {
+  padding-top: 10px;
+}
+.movie__title,
+.movie__genre {
+  font-weight: $font-weight;
+  font-size: $font-size;
+  line-height: $line-height;
+  letter-spacing: 0.06em;
+}
+.movie__title {
+  margin-bottom: 4px;
+  color: $text-color;
+}
+
+.movie__genre {
+  margin-bottom: 20px;
+  color: $accent-color;
+}
