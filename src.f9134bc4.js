@@ -7,4 +7,4 @@ const e={LIGHT:"light-theme",DARK:"dark-theme"},t=document.querySelector("body")
 },{}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss"),require("animate.css/animate.css"),require("./js/creatTheme");
 },{"./sass/main.scss":"clu1","animate.css/animate.css":"Y5dV","./js/creatTheme":"xZ5a"}]},{},["Focm"], null)
-//# sourceMappingURL=/The_Magnificent_Seven/src.9667da3d.js.map
+//# sourceMappingURL=/The_Magnificent_Seven/src.f9134bc4.js.map
