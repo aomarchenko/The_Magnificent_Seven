@@ -1,11 +1,12 @@
-@import './base/vars';
-@import './movie-card';
 @import 'modern-normalize/modern-normalize.css';
 @import './base/breakpoints';
 @import './base/fonts';
+@import './base/vars';
 @import './base/common';
 @import './base/container';
 @import './modal-window'
-
-
-
+@import './header';
+@import './movie-card';
+@import './base/container';
+@import './base/vars';
+@import './content';
