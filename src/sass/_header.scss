@@ -7,7 +7,7 @@
   font-family: $font-family;
   font-weight: 500;
   background-color: $header-gradient;
-  background-position: top;
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
@@ -63,6 +63,56 @@
     }
   }
 }
+
+.header_library {
+  background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+    url('../images/library-desk.jpg');
+
+  @media screen and (max-width: 767px) {
+    .header_library {
+      background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+        url(../images/library-mob.jpg);
+    }
+  }
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    .header_library {
+      background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+        url(../images/library-tab.jpg);
+    }
+  }
+  @media screen and (min-width: 1024px) {
+    .header_library {
+      background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+        url(../images/library-desk.jpg);
+    }
+  }
+  @media screen and (min-device-pixel-ratio: 2) and (min-width: 1024px),
+    screen and (min-resolution: 192dpi) and (min-width: 1024px),
+    screen and (min-resolution: 2dppx) and (min-width: 1024px) {
+    .header_library {
+      background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+        url(../images/library-desk@2x.jpg);
+    }
+  }
+  @media screen and (min-device-pixel-ratio: 2) and (min-width: 768px),
+    screen and (min-resolution: 192dpi) and (min-width: 768px),
+    screen and (min-resolution: 2dppx) and (min-width: 768px) {
+    .header_library {
+      background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+        url(../images/library-tab@2x.jpg);
+    }
+  }
+
+  @media screen and (min-device-pixel-ratio: 2) and (max-width: 767.9px),
+    screen and (min-resolution: 192dpi) and (max-width: 767.98px),
+    screen and (min-resolution: 2dppx) and (max-width: 767.9px) {
+    .header_library {
+      background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+        url(../images/library-mob@2x.jpg);
+    }
+  }
+}
+
 .navigation-container {
   display: flex;
   align-items: center;
@@ -151,6 +201,18 @@
   border-radius: 2px;
   background-color: $accent-color;
 }
+
+.nav-menu__link.library_current::after {
+  content: '';
+  position: absolute;
+  left: 52%;
+  bottom: -7%;
+  width: 69px;
+  height: 3px;
+  border-radius: 2px;
+  background-color: $accent-color;
+}
+
 .search-form {
   display: flex;
   position: relative;
