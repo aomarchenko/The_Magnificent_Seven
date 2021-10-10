@@ -64,24 +64,24 @@
   }
 }
 
-.header_library {
+.header-library {
   background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
     url('../images/library-desk.jpg');
 
   @media screen and (max-width: 767px) {
-    .header_library {
+    .header-library {
       background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
         url(../images/library-mob.jpg);
     }
   }
   @media screen and (min-width: 768px) and (max-width: 1023px) {
-    .header_library {
+    .header-library {
       background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
         url(../images/library-tab.jpg);
     }
   }
   @media screen and (min-width: 1024px) {
-    .header_library {
+    .header-library {
       background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
         url(../images/library-desk.jpg);
     }
@@ -89,7 +89,7 @@
   @media screen and (min-device-pixel-ratio: 2) and (min-width: 1024px),
     screen and (min-resolution: 192dpi) and (min-width: 1024px),
     screen and (min-resolution: 2dppx) and (min-width: 1024px) {
-    .header_library {
+    .header-library {
       background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
         url(../images/library-desk@2x.jpg);
     }
@@ -97,7 +97,7 @@
   @media screen and (min-device-pixel-ratio: 2) and (min-width: 768px),
     screen and (min-resolution: 192dpi) and (min-width: 768px),
     screen and (min-resolution: 2dppx) and (min-width: 768px) {
-    .header_library {
+    .header-library {
       background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
         url(../images/library-tab@2x.jpg);
     }
@@ -106,7 +106,7 @@
   @media screen and (min-device-pixel-ratio: 2) and (max-width: 767.9px),
     screen and (min-resolution: 192dpi) and (max-width: 767.98px),
     screen and (min-resolution: 2dppx) and (max-width: 767.9px) {
-    .header_library {
+    .header-library {
       background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
         url(../images/library-mob@2x.jpg);
     }
@@ -287,13 +287,13 @@ body.dark-theme {
   padding: 16px 24px;
 }
 
-.btn-container {
+.library-box {
   display: flex;
   justify-content: center;
   margin: 49px 0;
 }
 
-.toolbar__btn {
+.library__btn {
   width: 130.19px;
   height: 44px;
   border: 1px solid $white-text-color;
@@ -307,19 +307,23 @@ body.dark-theme {
   }
 }
 
-.toolbar__btn:not(:last-child) {
+.library__btn:not(:last-child) {
   margin-right: 20px;
 
   @media screen and (min-width: 768px) {
     margin-right: 15px;
   }
 }
-
-.toolbar__btn:hover,
-.toolbar__btn:focus {
+.library__btn--is-active {
   background: $accent-color;
   border: transparent;
 }
+
+// .toolbar__btn:hover,
+// .toolbar__btn:focus {
+//   background: $accent-color;
+//   border: transparent;
+// }
 
 /* THEME SWITCH */
 .theme-switch {
