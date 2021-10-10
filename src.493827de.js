@@ -12,4 +12,4 @@ const e={LIGHT:"light-theme",DARK:"dark-theme"},s=document.querySelector("body")
 },{}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss"),require("animate.css/animate.css"),require("./js/back-to-top"),require("./js/creatTheme");
 },{"./sass/main.scss":"clu1","animate.css/animate.css":"Y5dV","./js/back-to-top":"EZ65","./js/creatTheme":"xZ5a"}]},{},["Focm"], null)
-//# sourceMappingURL=/The_Magnificent_Seven/src.86339980.js.map
+//# sourceMappingURL=/The_Magnificent_Seven/src.493827de.js.map
