@@ -27,6 +27,7 @@
   },
   "dependencies": {
     "animate.css": "^4.1.1",
-    "modern-normalize": "^1.1.0"
+    "modern-normalize": "^1.1.0",
+    "vanilla-back-to-top": "^7.2.1"
   }
 }
