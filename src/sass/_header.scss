@@ -222,7 +222,33 @@ body.dark-theme {
   justify-content: flex-end;
   padding: 16px 24px;
 }
-
+.footer.dark-theme {
+  background-color: #222;
+}
+.js-footer.light-theme {
+  color: #333333;
+}
+.js-footer.dark-theme {
+  color: #d3d3d4;
+}
+.js-footer-link.dark-theme {
+  color: #d3d3d4;
+}
+.js-footer-link.light-theme {
+  color: #333333;
+}
+.js-footer-color.dark-theme {
+  color: #d3d3d4;
+}
+.js-footer-color.light-theme {
+  color: #333333;
+}
+.js-goit.dark-theme {
+  color: #d3d3d4;
+}
+.js-footer-color.light-theme {
+  color: #333333;
+}
 /* THEME SWITCH */
 .theme-switch {
   display: flex;
@@ -299,3 +325,7 @@ body.dark-theme {
 .theme-switch__toggle:active + .theme-switch__track {
   box-shadow: 0 0 0 3px #2196f3;
 }
+// .dark-theme {
+//   color: #d3d3d4;
+//   background-color: #222;
+// }
