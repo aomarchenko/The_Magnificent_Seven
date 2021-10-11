@@ -1,199 +1,202 @@
-.backdrop{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.2);
-    overflow-y: auto;
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  overflow-y: auto;
 }
-.modal{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100%;
-    
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100%;
 }
-.modal__window{
-    position: relative;
-    width: 280px;
-    padding: 50px 20px 40px 20px;
-    background-color: #fff;
+.modal__window {
+  position: relative;
+  width: 280px;
+  padding: 50px 20px 40px 20px;
+  background-color: #fff;
 
-    @media screen and (min-width: $tablet) and (max-width: $to-desktop){
-        width: 620px;
-    };
-    @media screen and (min-width: $desktop){
-        width: 882px;
-    }
-    
-
+  @media screen and (min-width: $tablet) and (max-width: $to-desktop) {
+    width: 620px;
+  }
+  @media screen and (min-width: $desktop) {
+    width: 882px;
+  }
 }
 .is-hidden {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 }
-.modal__button-close{
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    
-    border-style: none;
-    background-color: inherit;
-}
+.modal__button-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
 
-.modal__content{
-    @media screen and (min-width: $tablet){
-        display: flex;
-        justify-content: space-around;
-
-    }
+  border-style: none;
+  background-color: inherit;
 }
 
-.modal__img{
-    width:  240px;
-    border-radius: 5px;
-    @media screen and (min-width: $tablet) and (max-width: $to-desktop){
-        width: 264px;
-        height: 364px;
-    }
-    @media screen and (min-width: $desktop){
-        width: 396px;
-        height: 477px;
-        object-fit: cover;
-        object-position: center top;
-        
-    }
-    
+.modal__content {
+  @media screen and (min-width: $tablet) {
+    display: flex;
+    justify-content: space-around;
+  }
 }
 
-.modal__about-film{
-    @media screen and (min-width: $tablet) and (max-width: $to-desktop){
-        width: 264px;
-    }
-    @media screen and (min-width: $desktop){
-        width: 396px;
-    }
+.modal__img {
+  width: 240px;
+  border-radius: 5px;
+  @media screen and (min-width: $tablet) and (max-width: $to-desktop) {
+    width: 264px;
+    height: 364px;
+  }
+  @media screen and (min-width: $desktop) {
+    width: 396px;
+    height: 477px;
+    object-fit: cover;
+    object-position: center top;
+  }
 }
 
-.modal__title{
-    margin-top: 30px;
-    margin-bottom: 20px;
+.modal__about-film {
+  @media screen and (min-width: $tablet) and (max-width: $to-desktop) {
+    width: 264px;
+  }
+  @media screen and (min-width: $desktop) {
+    width: 396px;
+  }
+}
 
-    font-weight: 500;
-font-size: 20px;
+.modal__title {
+  margin-top: 30px;
+  margin-bottom: 20px;
+  color: $text-color;
 
-@media screen and (min-width: $tablet){
+  font-weight: 500;
+  font-size: 20px;
+  text-transform: uppercase;
+
+  @media screen and (min-width: $tablet) {
     margin-top: 0px;
-}
-@media screen and (min-width: $desktop){
+  }
+  @media screen and (min-width: $desktop) {
     font-size: 30px;
     line-height: 1.16;
-}
-}
-
-.modal__ifno-section{
-    display: flex;
-    margin-bottom: 20px;
+  }
 }
 
-.modal__info-key{
-    margin-right: 40px;
-    color: $modal-description-color;
-
-    &:not(:last-child){
-    margin-bottom: 10px;    
-    }
-    @media screen and (min-width: $desktop){
-        margin-right: 85px;
-    }
+.modal__ifno-section {
+  display: flex;
+  margin-bottom: 20px;
 }
 
-.modal__info-value{
-    &:not(:last-child){
-        margin-bottom: 10px;    
-        }
-        
-}
+.modal__info-key {
+  min-width: 70px;
+  margin-right: 40px;
+  color: $modal-description-color;
 
-.modal__rating{
-    color: $white-text-color;
-    background-color: $hover-color;
-
-    border-radius: 5px;
-    padding: 1px 10px;
-}
-.modal__votes{
-    background-color: #f7f7f7;
-    border-radius: 5px;
-}
-.moda__about-title{
+  &:not(:last-child) {
     margin-bottom: 10px;
-
-    font-weight: 500;
-font-size: 12px;
+  }
+  @media screen and (min-width: $desktop) {
+    margin-right: 85px;
+  }
 }
 
-.modal__description{
-    margin-bottom: 20px;
-
-line-height: 1.67;
+.modal__info-value {
+  word-wrap: break-word;
+  color: $text-color;
+  &:not(:last-child) {
+    margin-bottom: 10px;
+  }
 }
 
-.modal__button-container{
-    display: flex;
-    justify-content: space-between;
-    @media screen and (min-width: $desktop){
-        justify-content: flex-start;
-    }
+.modal__rating {
+  color: $white-text-color;
+  background-color: $hover-color;
+
+  border-radius: 5px;
+  padding: 1px 10px;
+}
+.modal__votes {
+  background-color: #f7f7f7;
+  border-radius: 5px;
+}
+.moda__about-title {
+  margin-bottom: 10px;
+  color: $text-color;
+  font-weight: 500;
+  font-size: 12px;
 }
 
-.modal__button-watched{
-    width: 112px;
-    height: 44px;
+.modal__description {
+  margin-bottom: 20px;
 
-    border-radius: 5px;
-    border-style: none;
-    
-    background-color: $hover-color;
+  line-height: 1.67;
 
-    color: $white-text-color;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 1.33;
-    
-    text-align: center;
-    @media screen and (min-width: $tablet) and (max-width: $to-desktop){
-        width: 125px;
-    }
-    @media screen and (min-width: $desktop){
-        width: 136px;
-        margin-right: 15px;
-    }
-    
+  color: $text-color;
 }
 
-.modal__button-queue{
-    width: 112px;
-    height: 44px;
+.modal__button-container {
+  display: flex;
+  justify-content: space-between;
+  @media screen and (min-width: $desktop) {
+    justify-content: flex-start;
+  }
+}
 
-    border-radius: 5px;
-    border-style: solid;
-    border-color: $text-color;
+.modal__button-watched {
+  width: 112px;
+  height: 44px;
 
-    background-color: inherit;
+  border-radius: 5px;
+  border-style: none;
 
-    font-style: normal;
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 1.33;
+  background-color: $hover-color;
 
-    @media screen and (min-width: $tablet) and (max-width: $to-desktop){
-        width: 125px;
-    }
-    @media screen and (min-width: $desktop){
-        width: 136px;
-    }
+  color: $white-text-color;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.33;
+
+  text-align: center;
+
+  cursor: pointer;
+  @media screen and (min-width: $tablet) and (max-width: $to-desktop) {
+    width: 125px;
+  }
+  @media screen and (min-width: $desktop) {
+    width: 136px;
+    margin-right: 15px;
+  }
+}
+
+.modal__button-queue {
+  width: 112px;
+  height: 44px;
+
+  border-radius: 5px;
+  border-style: solid;
+  border-color: $text-color;
+
+  background-color: inherit;
+
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.33;
+
+  cursor: pointer;
+  @media screen and (min-width: $tablet) and (max-width: $to-desktop) {
+    width: 125px;
+  }
+  @media screen and (min-width: $desktop) {
+    width: 136px;
+  }
 }
