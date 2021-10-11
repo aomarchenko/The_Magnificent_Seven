@@ -3,7 +3,7 @@ const BASE_URL = 'https://api.themoviedb.org/3/';
 const trendingRequest = 'trending/movie/week';
 
 
-export default class ВataBaseApi{
+export default class DataBaseApi{
     constructor(){
 this.page = 1;
 this.request = '';
@@ -20,10 +20,11 @@ async homePageFetch(){
 async searchMovieFetch(){         
     let response = await fetch(`${BASE_URL}search/movie?api_key=${API_KEY}&query=${this.request}`)
     let data = await response.json();
+    let result = await data.results
         // console.log(data);
         //     console.log(result);
         this.incrementPage()
-        return data;
+        return result;
 }
 incrementPage(){
     this.page +=1
