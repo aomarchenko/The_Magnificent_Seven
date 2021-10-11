@@ -1,0 +1,54 @@
+.footer {
+  background-color: $background-alternative-color;
+  padding-right: 36px;
+  padding-left: 48px;
+  text-align: center;
+  min-width: $mobile;
+
+  @media screen and (max-width: $to-tablet) {
+    padding-top: 29px;
+    padding-bottom: 30px;
+  }
+
+  @media screen and (min-width: $tablet) {
+    padding-top: 30px;
+    padding-bottom: 28px;
+  }
+}
+
+.footer__text {
+  color: $footer-text-color;
+  font-family: $font-family;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 1.14;
+
+  @media screen and (min-width: $tablet) {
+    font-size: 16px;
+    line-height: 1.19;
+  }
+}
+
+.footer__link:hover,
+.footer:focus {
+  color: $accent-color;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+// heart animation
+
+.footer__svg {
+  animation: heartBeat;
+  animation-duration: 2000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: $timing-function;
+
+  &:hover,
+  &:focus {
+    animation-play-state: paused;
+  }
+}
