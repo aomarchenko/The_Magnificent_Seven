@@ -24,14 +24,4 @@ async searchMovieFetch(){
         return result;
 },
 
-// async genreFetch(){
-//     let response = await fetch(`${BASE_URL}${genreRequest}?api_key=${API_KEY}&language=en-US`)
-//     let data = await response.json();
-//         console.log(data);
-//     let result = await data.genres
-//         console.log(result);
-//         return result; 
-// }
-
-
 }
