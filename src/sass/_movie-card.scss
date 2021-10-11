@@ -17,6 +17,18 @@
     margin-top: 30px;
   }
 }
+.movie__thumb {
+  margin-bottom: 10px;
+  max-width: 100%;
+  height: auto;
+}
+.movie__thumb > img {
+  display: block;
+  height: 100%;
+  width: 100%;
+
+  object-fit: cover;
+}
 .movie__item > a {
   display: block;
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -29,8 +41,6 @@
 }
 
 .movie__text {
-  padding-top: 10px;
-
   font-weight: $font-weight;
   font-size: $font-size;
   line-height: $line-height;
