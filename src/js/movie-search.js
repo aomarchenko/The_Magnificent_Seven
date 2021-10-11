@@ -1,4 +1,4 @@
-import createMovieGalleryTpl from './home-page';
+import movieCardTpl from '../templates/movie-card.hbs';
 import DataBaseApi from './dataBaseApi.js';
 const debounce = require('lodash.debounce');
 const movieList = document.querySelector('.page-film');
@@ -15,8 +15,10 @@ const onSearchResult = () => {
   promisMoviesArray
   .then(array=>{
       console.log(array)
-      
+     clearMarkup(movieList, '')
+     createMovieListMarckup(movieList, array)
     })
+    return
     // .then(array => {
     //   console.log(array);
     //   if (array.length > 10 || array.length === 0) {
@@ -53,16 +55,10 @@ const onSearchResult = () => {
    
 // };
 
-function createCountryListMarckup(array) {
-      refs.countryList.innerHTML = countriesTpl(array);
+function createMovieListMarckup(markup, array) {
+  markup.innerHTML = movieCardTpl(array);
 }
-
-function createCountryDataMarckup(array) {
-  refs.countryData.innerHTML = countryTpl(array[0]);
+function clearMarkup(markup, value){
+  markup.innerHTML = value;
 }
-function clearMarckup(marckup, value){
-  marckup.innerHTML = value;
-
-}
-
 input.addEventListener('input', debounce(onSearchResult, 500))
