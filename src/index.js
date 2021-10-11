@@ -11,3 +11,4 @@ import './js/creatTheme'
 
 
 import './js/team';
+import './js/modal-window';
