@@ -9,3 +9,4 @@ import './js/creatTheme';
 
 import './js/team';
 import './js/notification';
+import './js/renderHeader'
