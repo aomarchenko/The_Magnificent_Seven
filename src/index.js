@@ -6,7 +6,7 @@ import './js/creatTheme';
 
 import './js/home-page';
 
-import './js/searchApi';
+import './js/dataBaseApi';
 
 import './js/movie-search';
 
