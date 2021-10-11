@@ -287,11 +287,10 @@ body.dark-theme {
   padding: 16px 24px;
 }
 
-
 .library-box {
   display: flex;
   justify-content: center;
-  margin-top: 49px;
+  margin-top: 47px;
 }
 
 .library__btn {
@@ -325,7 +324,9 @@ body.dark-theme {
 //   background: $accent-color;
 //   border: transparent;
 // }
-
+.display-none {
+  display: none;
+}
 
 .footer.dark-theme {
   background-color: #222;

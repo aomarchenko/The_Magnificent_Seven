@@ -22,4 +22,5 @@ import './js/modal-window';
 
 import './js/notification';
 
+import './js/renderHeader'
 
