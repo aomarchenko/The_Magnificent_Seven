@@ -17,5 +17,9 @@ import './js/back-to-top';
 import './js/creatTheme';
 
 import './js/team';
+
+import './js/modal-window';
+
 import './js/notification';
+
 
