@@ -125,6 +125,8 @@
 .header-logo {
   display: flex;
   align-self: flex-end;
+  transition-duration: 0.25s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   @media screen and (max-width: 767px) {
     margin-right: 112px;
   }
@@ -140,21 +142,27 @@
     color: $accent-color;
   }
 }
+.icon-film {
+  animation: backInLeft;
+  animation-duration: 2000ms;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
 .header-logo__svg {
   width: 24px;
   height: 24px;
   fill: $film-icon-color;
+  transition-duration: 0.25s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
   &:hover,
   &:focus {
     stroke: $accent-color;
+    animation-play-state: paused;
   }
   @media screen and (min-width: 768px) {
     margin-right: 10px;
     margin-top: 14px;
   }
-}
-.logo__svg {
-  //   fill: none;
 }
 .logo-text {
   @media screen and (max-width: 767px) {
@@ -179,6 +187,8 @@
   line-height: 1.16;
   color: $white-text-color;
   text-transform: uppercase;
+  transition-duration: 0.25s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 
   &:hover,
   &:active,
@@ -234,6 +244,8 @@
   padding: 4px 0;
   background-color: transparent;
   color: $white-text-color;
+  transition-duration: 0.25s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   &:hover,
   &:focus {
     border-bottom: 0.5px solid $accent-color;
@@ -265,6 +277,8 @@
   right: 0;
   bottom: 5px;
   stroke: $white-text-color;
+  transition-duration: 0.25s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   &:hover,
   &:focus {
     stroke: $accent-color;
@@ -301,9 +315,21 @@ body.dark-theme {
   background-color: transparent;
   color: $white-text-color;
   font-weight: 500;
+  transition-duration: 0.25s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 
   @media screen and (min-width: 768px) {
     width: 136px;
+  }
+  &:hover,
+  &:focus {
+    border: 1px solid #ff6b01;
+    background: #ff6b01;
+    box-shadow: 0 8px 43px rgb(255 107 1 / 60%);
+    transition-property: background-color;
+    transition-duration: 0.25s;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
   }
 }
 
@@ -436,3 +462,7 @@ body.dark-theme {
 //   color: #d3d3d4;
 //   background-color: #222;
 // }
+.animation {
+  animation-duration: 2000ms;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
