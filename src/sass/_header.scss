@@ -7,7 +7,7 @@
   font-family: $font-family;
   font-weight: 500;
   background-color: $header-gradient;
-  background-position: top;
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
@@ -63,16 +63,61 @@
     }
   }
 }
+
+.header-library {
+  background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+    url('../images/library-desk.jpg');
+
+  @media screen and (max-width: 767px) {
+    .header-library {
+      background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+        url(../images/library-mob.jpg);
+    }
+  }
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    .header-library {
+      background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+        url(../images/library-tab.jpg);
+    }
+  }
+  @media screen and (min-width: 1024px) {
+    .header-library {
+      background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+        url(../images/library-desk.jpg);
+    }
+  }
+  @media screen and (min-device-pixel-ratio: 2) and (min-width: 1024px),
+    screen and (min-resolution: 192dpi) and (min-width: 1024px),
+    screen and (min-resolution: 2dppx) and (min-width: 1024px) {
+    .header-library {
+      background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+        url(../images/library-desk@2x.jpg);
+    }
+  }
+  @media screen and (min-device-pixel-ratio: 2) and (min-width: 768px),
+    screen and (min-resolution: 192dpi) and (min-width: 768px),
+    screen and (min-resolution: 2dppx) and (min-width: 768px) {
+    .header-library {
+      background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+        url(../images/library-tab@2x.jpg);
+    }
+  }
+
+  @media screen and (min-device-pixel-ratio: 2) and (max-width: 767.9px),
+    screen and (min-resolution: 192dpi) and (max-width: 767.98px),
+    screen and (min-resolution: 2dppx) and (max-width: 767.9px) {
+    .header-library {
+      background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+        url(../images/library-mob@2x.jpg);
+    }
+  }
+}
+
 .navigation-container {
   display: flex;
   align-items: center;
   justify-content: center;
-  @media screen and (max-width: 767px) {
-    margin-bottom: 45px;
-  }
-  @media screen and (min-width: 768px) {
-    margin-bottom: 37px;
-  }
+
   @media screen and (min-width: 1024px) {
     padding: 0;
   }
@@ -151,12 +196,31 @@
   border-radius: 2px;
   background-color: $accent-color;
 }
+
+.nav-menu__link.library_current::after {
+  content: '';
+  position: absolute;
+  left: 52%;
+  bottom: -7%;
+  width: 69px;
+  height: 3px;
+  border-radius: 2px;
+  background-color: $accent-color;
+}
+
 .search-form {
   display: flex;
   position: relative;
   width: 280px;
-  margin: 0 auto 22px;
+  margin: 41px auto 22px;
   justify-content: center;
+
+  @media screen and (max-width: 767px) {
+    margin-bottom: 41px;
+  }
+  @media screen and (min-width: 768px) {
+    margin-bottom: 20px;
+  }
 }
 .search-input {
   width: 280px;
@@ -222,6 +286,47 @@ body.dark-theme {
   justify-content: flex-end;
   padding: 16px 24px;
 }
+
+
+.library-box {
+  display: flex;
+  justify-content: center;
+  margin-top: 49px;
+}
+
+.library__btn {
+  width: 130.19px;
+  height: 44px;
+  border: 1px solid $white-text-color;
+  border-radius: 5px;
+  background-color: transparent;
+  color: $white-text-color;
+  font-weight: 500;
+
+  @media screen and (min-width: 768px) {
+    width: 136px;
+  }
+}
+
+.library__btn:not(:last-child) {
+  margin-right: 20px;
+
+  @media screen and (min-width: 768px) {
+    margin-right: 15px;
+  }
+}
+.library__btn--is-active {
+  background: $accent-color;
+  border: transparent;
+}
+
+// .toolbar__btn:hover,
+// .toolbar__btn:focus {
+//   background: $accent-color;
+//   border: transparent;
+// }
+
+
 .footer.dark-theme {
   background-color: #222;
 }
@@ -249,6 +354,7 @@ body.dark-theme {
 .js-footer-color.light-theme {
   color: #333333;
 }
+
 /* THEME SWITCH */
 .theme-switch {
   display: flex;
