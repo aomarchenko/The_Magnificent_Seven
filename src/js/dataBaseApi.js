@@ -21,18 +21,18 @@ async searchMovieFetch(){
     let response = await fetch(`${BASE_URL}search/movie?api_key=${API_KEY}&query=${this.request}`)
     let data = await response.json();
     let result = await data.results
-        // console.log(data);
-        //     console.log(result);
-        this.incrementPage()
+    //     // console.log(data);
+    //     //     console.log(result);
+    //     // this.incrementPage()
         return result;
 }
-incrementPage(){
-    this.page +=1
+// incrementPage(){
+//     this.page +=1
     
-}
+// }
  
-clearPage(){
-    return this.page = 1;
-}
+// clearPage(){
+//     return this.page = 1;
+// }
 
 }

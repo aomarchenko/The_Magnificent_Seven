@@ -17,5 +17,5 @@ import './js/back-to-top';
 import './js/creatTheme';
 
 import './js/team';
-import './js/notification';
+// import './js/notification';
 
