@@ -7,6 +7,7 @@ const movieList = document.querySelector('.page-film');
 const dataBaseApi = new DataBaseApi();
 // console.log(homePageFetch);
 
+
 function createMovieGalleryTpl(){
     const results = dataBaseApi.homePageFetch();
     results.then(array => {
