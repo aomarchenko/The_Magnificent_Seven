@@ -57,4 +57,4 @@ module.exports=[{id:"0",name:"Oleksandr Marchenko",image:"https://raw.githubuser
 },{"../../templates/header-libary.hbs":"Zoof","../refs/refs":"fi17"}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss"),require("animate.css/animate.css"),require("./js/components/creatTheme"),require("./js/home-page"),require("./js/dataBaseApi"),require("./js/movie-search"),require("./js/components/back-to-top"),require("./js/team"),require("./js/modal-window"),require("./js/notification"),require("./js/render/renderHeader");
 },{"./sass/main.scss":"clu1","animate.css/animate.css":"Y5dV","./js/components/creatTheme":"aOiL","./js/home-page":"Lxcc","./js/dataBaseApi":"Wbpo","./js/movie-search":"Hhot","./js/components/back-to-top":"X8Wl","./js/team":"ZxpD","./js/modal-window":"WcsN","./js/notification":"SiMs","./js/render/renderHeader":"LEWP"}]},{},["Focm"], null)
-//# sourceMappingURL=/The_Magnificent_Seven/src.1f917538.js.map
+//# sourceMappingURL=/The_Magnificent_Seven/src.0103bf1b.js.map
