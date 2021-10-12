@@ -35,10 +35,10 @@
   border-radius: 5px;
 }
 
-.movie__link:hover,
-.movie__link:focus {
-  box-shadow: 0 4px 4px 0 #757575;
-}
+// .movie__link:hover,
+// .movie__link:focus {
+//   box-shadow: 0 6px 4px 0 #757575;
+// }
 
 .movie__text {
   font-weight: $font-weight;
@@ -58,13 +58,15 @@
 // ==============================overlay=============================
 .one-card_overlay {
   position: absolute;
+  top: 0;
+  left: 0;
+
   width: 100%;
   height: 30%;
   background-color: rgba(78, 81, 83, 0.9);
   opacity: 0.9;
   padding: 63px 24px;
-  top: 0;
-  left: 0;
+
   font-weight: 400;
   font-size: 18px;
   line-height: 1.55;
@@ -75,14 +77,17 @@
   font-size: 18px;
   line-height: 1.55;
   letter-spacing: 0.03em;
-  padding: 63px 24px;
 }
-.movie__link:hover .one-card_overlay {
+.movie__item:hover .one-card_overlay {
   transform: translateY(0);
 }
 .movie__item {
   position: relative;
   overflow: hidden;
+  &:hover,
+  &:focus {
+    box-shadow: 0 6px 4px 0 #757575;
+  }
 }
 .btn_one-card {
   width: 90px;
