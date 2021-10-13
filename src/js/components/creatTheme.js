@@ -1,15 +1,18 @@
+import {
+  body,
+  footer,
+  footertext,
+  footertextlink,
+  footercolor,
+  change,
+  linkGoit,
+} from '../refs/refs'
+  
+
 const Theme = {
   LIGHT: 'light-theme',
   DARK: 'dark-theme',
 };
-
-const body = document.querySelector('body');
-const footer = document.querySelector('footer');
-const footertext = document.querySelector('.js-footer');
-const footertextlink = document.querySelector('.js-footer-link');
-const footercolor = document.querySelector('.js-footer-color')
-const change = document.getElementById('theme-switch-toggle');
-const linkGoit = document.querySelector('.js-goit')
 
 change.addEventListener('change', changeTheme);
 savedTheme();

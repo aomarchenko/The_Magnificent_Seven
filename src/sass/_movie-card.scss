@@ -35,10 +35,10 @@
   border-radius: 5px;
 }
 
-.movie__link:hover,
-.movie__link:focus {
-  box-shadow: 0 4px 4px 0 #757575;
-}
+// .movie__link:hover,
+// .movie__link:focus {
+//   box-shadow: 0 6px 4px 0 #757575;
+// }
 
 .movie__text {
   font-weight: $font-weight;
@@ -54,4 +54,59 @@
 .movie__genre {
   // margin-bottom: 20px;
   color: $accent-color;
+}
+// ==============================overlay=============================
+.one-card_overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 30%;
+  background-color: rgba(78, 81, 83, 0.9);
+  opacity: 0.9;
+  padding: 63px 24px;
+
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.55;
+  letter-spacing: 0.03em;
+  color: white;
+  transform: translateY(-100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  font-size: 18px;
+  line-height: 1.55;
+  letter-spacing: 0.03em;
+}
+.movie__item:hover .one-card_overlay {
+  transform: translateY(0);
+}
+.movie__item {
+  position: relative;
+  overflow: hidden;
+  &:hover,
+  &:focus {
+    box-shadow: 0 6px 4px 0 #757575;
+  }
+}
+.btn_one-card {
+  width: 90px;
+  height: 30px;
+  border: 1px solid $white-text-color;
+  border-radius: 5px;
+  background-color: transparent;
+  color: $white-text-color;
+  font-size: 10px;
+  transition-duration: 0.25s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover,
+  &:focus {
+    border: 1px solid #ff6b01;
+    background: #ff6b01;
+    box-shadow: 0 8px 43px rgb(255 107 1 / 60%);
+    transition-property: background-color;
+    transition-duration: 0.25s;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+  }
 }
