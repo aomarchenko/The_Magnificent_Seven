@@ -9,7 +9,7 @@ import './js/components/creatTheme';
 import './js/home-page';
 import './js/dataBaseApi';
 import './js/movie-search';
-
+import './js/pagination';
 
  
 
