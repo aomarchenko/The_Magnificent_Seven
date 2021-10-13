@@ -1,6 +1,6 @@
 import { createMovieGalleryTpl } from '../home-page';
 import NProgress from 'nprogress';
-import 'nprogress/nprogress.css';
+import nProgress from '../../sass/base/_nprogress.scss';
 import libaryHeader from '../../templates/header-libary.hbs'
 import {
     inputRef,
@@ -86,7 +86,7 @@ function removeEventLogo() {
 }
 
 function renderPageLogo(e) {
-    
+
     if (headerLogoBtn.classList.contains('header-home-page')) {
         e.preventDefault();
         return;

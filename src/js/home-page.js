@@ -1,5 +1,4 @@
 import NProgress from 'nprogress';
-import 'nprogress/nprogress.css';
 import movieCardTpl from '../templates/movie-card.hbs';
 import DataBaseApi from './dataBaseApi.js';
 import genres from './genres.json';
