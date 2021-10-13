@@ -1,0 +1,166 @@
+.modal__reg {
+  font-family: $font-family;
+  font-style: normal;
+  color: $text-color;
+  border: 1px solid $white-text-color;
+  background-color: $white-text-color;
+
+  border-radius: 5px;
+
+  @media screen and (min-width: $mobile) and (max-width: $to-tablet) {
+    width: 280px;
+    padding: 15px 20px 0px 20px;
+  }
+
+  @media screen and (min-width: $tablet) {
+    display: flex;
+    justify-content: center;
+
+    padding: 30px 30px 15px 30px;
+    width: 618px;
+  }
+}
+
+.container__reg--modal {
+  background-color: transparent;
+  border-radius: 5px;
+}
+
+.card__form {
+  // outline: 1px solid black;
+  padding: 0px 0px 30px 0px;
+
+  @media screen and (min-width: $mobile) and (max-width: $to-tablet) {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  @media screen and (min-width: $tablet) and (max-width: $to-desktop) {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  @media screen and (min-width: $desktop) {
+  }
+}
+
+.reg__logo--wrapper {
+  display: flex;
+}
+
+.reg-img {
+  width: 20px;
+  height: 20px;
+
+  margin-right: 5px;
+}
+
+.input {
+  display: flex;
+  flex-direction: column-reverse;
+  position: relative;
+  padding-top: 1.5rem;
+
+  & + .input {
+    margin-top: 1.5rem;
+  }
+}
+
+.input__field {
+  border: 0;
+  z-index: 1;
+  background-color: transparent;
+  border-bottom: 2px solid $modal-description-color;
+  font: inherit;
+  font-size: 1.125rem;
+  padding: 0.25rem 0;
+
+  &:focus,
+  &:valid,
+  &:invalid {
+    outline: 0;
+    border-bottom-color: $accent-color;
+
+    & + .input__label {
+      color: $accent-color;
+      transform: translateY(-1.5rem);
+    }
+  }
+}
+
+.input__label {
+  color: $modal-description-color;
+  position: absolute;
+  top: 1.5rem;
+  transition: 0.25s ease;
+}
+
+.auth__btn--wrapper {
+  padding-top: 30px;
+  display: flex;
+  justify-content: center;
+
+  @media screen and (min-width: $mobile) and (max-width: $to-tablet) {
+    flex-direction: column;
+  }
+}
+
+.auth__btn {
+  margin: 10px;
+  padding: 10px 30px;
+  min-width: 200px;
+  height: 50px;
+  // box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border: 1px solid $text-color;
+  cursor: pointer;
+
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 25px;
+  letter-spacing: 0.03em;
+  text-align: center;
+  box-sizing: border-box;
+  border-radius: 5px;
+  background: rgba(0, 0, 0, 0);
+
+  &:hover,
+  &:focus {
+    background-color: #ff6b01;
+    color: $white-text-color;
+    border: none;
+    outline-style: none;
+  }
+}
+
+// если нет других стилей кнопки:
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+
+  box-sizing: border-box;
+  border-radius: 5px;
+  background: rgba(0, 0, 0, 0);
+
+  font-family: $font-family;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.33;
+
+  cursor: pointer;
+
+  &:first-child {
+    margin-right: 15px;
+  }
+  @media screen and (max-width: 767px) {
+    &-modal:first-child {
+      margin-right: 16px;
+    }
+  }
+}

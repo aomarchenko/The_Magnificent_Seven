@@ -144,7 +144,7 @@
 }
 .icon-film {
   animation: backInLeft;
-  animation-duration: 2000ms;
+  animation-duration: 1000ms;
   animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .header-logo__svg {
@@ -465,4 +465,7 @@ body.dark-theme {
 .animation {
   animation-duration: 2000ms;
   animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.header-home-page {
+  text-transform: uppercase;
 }
