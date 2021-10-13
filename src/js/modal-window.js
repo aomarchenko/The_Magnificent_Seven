@@ -9,6 +9,11 @@ const filmsContainer = document.querySelector('.page-film');
 filmsContainer.addEventListener('click', modalOpener)
 
 closeModalBtn.addEventListener('click', closeModalFn);
+document.addEventListener("keydown", (evt) =>{
+    if(!modalWindow.classList.contains("is-hidden") || evt.code === "Escape"){
+        closeModalFn()
+    }
+});
 
 function closeModalFn  () {
     modalWindow.classList.add('is-hidden');
@@ -18,7 +23,7 @@ function closeModalFn  () {
 function modalOpener(e) {
     e.preventDefault()
     const id = e.target.dataset.id;
-    console.dir(id);
+
     if(e.target.tagName === 'IMG') {
         modalWindow.classList.remove('is-hidden');
         fetchFilm(id);
