@@ -2,10 +2,10 @@ import movieCardTpl from '../templates/movie-card.hbs';
 import DataBaseApi from './dataBaseApi.js';
 import '@pnotify/core/dist/PNotify.css';
 import '../sass/BrightTheme.css';
-import pagination from '../js/pagination'
+// import pagination from '../js/pagination'
 import { error, alert } from '@pnotify/core/dist/PNotify.js';
 import * as PNotifyMobile from '@pnotify/mobile/dist/PNotifyMobile.js';
-
+// import notification from './notification.js'
 import '@pnotify/mobile/dist/PNotifyMobile.css';
 
 const debounce = require('lodash.debounce');
@@ -14,60 +14,57 @@ const input = document.querySelector('.search-input');
 
 const dataBaseApi = new DataBaseApi();
 
-export const onSearchResult = async (event) => {
-  event.preventDefault();
+export const onSearchResult =  (e) => {
+  e.preventDefault();
   dataBaseApi.request = input.value.trim();
-
-  //console.log(event);
-
-  dataBaseApi.clearPage();
-  clearMarkup();
-   if (!dataBaseApi.request) {
-   alert({
+  console.log(dataBaseApi.request);
+  if (!dataBaseApi.request ) 
+  return alert({
     text: 'Opps! No request! Try again!',
     type: 'error',
     delay: 1000,
     hide: true,
-  });
-  document.querySelector('#pagination').innerHTML = '';
-}
-  fetchMovie();
-};
+  }); 
+  let promisMoviesArray = dataBaseApi.searchMovieFetch(dataBaseApi.request);
 
+  promisMoviesArray
+  .then(array=>{
+    if (array.length === 0) {
+      return alert({
+          title: "I don't know such movie.",
+          text: 'Please enter a more specific query!',
+          type: 'error',
+          delay: 1000,
+          hide: true,
+        });   
+    }
+    if (array.length >= 1) {
+      movieList.innerHTML = '';
+      movieList.innerHTML = movieCardTpl(array);
+    }
 
-
-async function fetchMovie(){
-  const movies = await dataBaseApi.searchMovieFetch(dataBaseApi.requests);
-  //console.log(movies)
-  createMovieListMarckup(movies.results)
-  pagination.reset(movies.total_results);
-
-  if (movies.results.length === 0) {
+  })
+.catch(() => {
     alert({
-        title: "I don't know such movie.",
-        text: 'Please enter a more specific query!',
-        type: 'error',
-        delay: 1000,
-        hide: true,
-      }) 
-  } else if (dataBaseApi.request.length === 0) {
-     alert({
-    title: "Error",
-    text: "There is no films exist with such name. Check your input",
-    type: 'error',
-    delay: 1000,
-    hide: true,
-  })};
+      title: "Error",
+      text: "There is no films exist with such name. Check your input",
+      type: 'error',
+      delay: 1000,
+      hide: true,
+    })
+  })
+
 }
+  
 
 
-export function createMovieListMarckup(data) {
-  movieList.innerHTML = movieCardTpl(data);
-}
+// export function createMovieListMarckup(data) {
+//   movieList.innerHTML = movieCardTpl(data);
+// }
 
-function clearMarkup(){
-  movieList.innerHTML = ('');
-}
+// function clearMarkup(){
+//   movieList.innerHTML = ('');
+// }
 
 
 input.addEventListener('input', debounce(onSearchResult, 500))
