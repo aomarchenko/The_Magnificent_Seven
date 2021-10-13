@@ -3,6 +3,7 @@
 @import './base/vars';
 @import './base/breakpoints';
 @import './base/fonts';
+
 @import './base/common';
 @import './base/container';
 
@@ -17,4 +18,8 @@
 @import './layouts/footer';
 
 @import './team';
+
+@import './base/nprogress';
+
 @import './spin';
+
