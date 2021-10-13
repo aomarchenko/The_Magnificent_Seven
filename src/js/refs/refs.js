@@ -2,6 +2,7 @@ const inputRef = document.querySelector('.search-form');
 const pageHomeBtn = document.querySelector('.js-button-home')
 const pageLibaryBtn = document.querySelector('.js-button-libary')
 const headerRef = document.querySelector('.header');
+const headerLogoBtn = document.querySelector('.header-logo')
 const formRef = document.querySelector('.search-input');
 const buttonSearchRef = document.querySelector('.search-button');
 const body = document.querySelector('body');
@@ -26,4 +27,5 @@ export {
     footercolor,
     change,
     linkGoit,
+    headerLogoBtn,
 }

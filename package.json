@@ -31,6 +31,7 @@
     "animate.css": "^4.1.1",
     "debounce": "^1.2.1",
     "modern-normalize": "^1.1.0",
+    "nprogress": "^0.2.0",
     "vanilla-back-to-top": "^7.2.1"
   }
 }
