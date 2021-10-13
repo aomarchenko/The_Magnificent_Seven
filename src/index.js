@@ -23,5 +23,4 @@ import './js/notification';
 
 import './js/render/renderHeader'
 
-import './js/localStorageWatch';
-import './js/localStorageQueue';
+import './js/localStorage';
