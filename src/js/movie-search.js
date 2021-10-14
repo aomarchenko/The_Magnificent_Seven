@@ -1,5 +1,6 @@
 import movieCardTpl from '../templates/movie-card.hbs';
 import DataBaseApi from './dataBaseApi.js';
+import {replaceData} from './change-data.js';
 import '@pnotify/core/dist/PNotify.css';
 import '../sass/BrightTheme.css';
 // import pagination from '../js/pagination'
@@ -40,7 +41,7 @@ export const onSearchResult =  (e) => {
     }
     if (array.length >= 1) {
       movieList.innerHTML = '';
-      movieList.innerHTML = movieCardTpl(array);
+      movieList.innerHTML = movieCardTpl(replaceData(array));
     }
 
   })
