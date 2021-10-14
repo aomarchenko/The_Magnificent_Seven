@@ -1,14 +1,15 @@
 // import NProgress from 'nprogress';
 import movieCardTpl from '../templates/movie-card.hbs';
 import DataBaseApi from './dataBaseApi.js';
-import genres from './genres.json';
+import {replaceData} from './change-data.js';
 // import { opts, spinner, target } from './spinner';
 const movieList = document.querySelector('.page-film');
 // console.log(movieList);
 // console.log(genres);
 const dataBaseApi = new DataBaseApi();
 // console.log(dataBaseApi);
-// console.log(dataBaseApi.homePageFetch());
+// console.log(dataBaseApi.getMovieObjectForRender());
+
 
 
 function createMovieGalleryTpl() {
@@ -21,12 +22,14 @@ function createMovieGalleryTpl() {
   const results = dataBaseApi.homePageFetch();
   // console.log(results);
   results.then(array => {
-    movieList.insertAdjacentHTML('beforeend', movieCardTpl(array));
+  // const newData = replaceGenres(array)
+    movieList.insertAdjacentHTML('beforeend', movieCardTpl(replaceData(array)))
+    
     // NProgress.done();
     // stops spinner
     // spinner.stop();
     // ================
-  });
+  })
   return;
 }
 
