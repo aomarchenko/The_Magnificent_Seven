@@ -15,6 +15,7 @@ async homePageFetch(){
     let response = await fetch(`${this.BASE_URL}${this.trendingRequest}?api_key=${this.API_KEY}`);
     let data = await response.json();
     let result = await data.results;
+    //  console.log(result);
         return result; 
     }     
     catch (error){
@@ -29,9 +30,10 @@ async homePageFetch(){
 
 async searchMovieFetch(){         
    try{
-    let response = await fetch(`${this.BASE_URL}${this.keyWordRequest}?api_key=${this.API_KEY}&query=${this.request}`)
+    let response = await fetch(`${this.BASE_URL}${this.keyWordRequest}?api_key=${this.API_KEY}&query='${this.request}'`)
     let data = await response.json();
     let result = await data.results
+   
            return result;
    }
    catch (error){
@@ -43,42 +45,54 @@ async searchMovieFetch(){
 }    
 }
 
-clearPage(){
-    
-}
-getMovieGenreIds(id) {
-    console.log(id);
-    const genreArray = id.map(id_genre => {
-         const genre = this.genres.find(genre => id_genre === genre.id);
-        if (genre === undefined) return;
-             return genre.name;   
-    })
-     if (genreArray.length > 2) {
-         return genreArray.slice(0, 2).join(', ') + ', ' + 'Other';
-     }
-     if (genreArray.includes(undefined)) {
-         return genreArray.join('');
-     } else {
-         return genreArray.join(', ');
-     }
+// async getGenresList() {
+//     try{
+//     let response = await fetch(`${this.BASE_URL}genre/movie/list?api_key=${this.API_KEY}&language='en'`)
+//     let data = await response.json();
+//     console.log(data);
+//             return data;
+//     }
+//     catch (error){
+//         alert({
+//             text: 'error',
+//             delay: 1000,
+//             hide: true,
+//             }); 
+//     }    
+// }
 
- }
+// getMovieGenreIds(id) {
+//     console.log(id);
+//     this.homePageFetch()
+//     .then(array=>{array.map (arr => const id=arr.genres_ids )})
+//     const genreArray = id.map(id_genre => {
+//          const genre = this.genres.find(genre => id_genre === genre.id);
+//         if (genre === undefined) return;
+//              return genre.name;   
+//     })
+//      if (genreArray.length > 2) {
+//          return genreArray.slice(0, 2).join(', ') + ', ' + 'Other';
+//      }
+//      if (genreArray.includes(undefined)) {
+//          return genreArray.join('');
+//      } else {
+//          return genreArray.join(', ');
+//      }
 
-getMovieObjectForRender(MovieData) {
-    if (!MovieData) {return}
-    return {
-        poster_path: MovieData.poster_path || MovieData.backdrop_path,
-        title: MovieData.title || MovieData.original_name,
-        genres: MovieData.genres ?
-            MovieData.genres.map(genre => genre.name).join(', ') : this.getGenreById(MovieData.genre_ids),
-        year: MovieData.release_date === undefined ? MovieData.first_air_date === undefined ? 'Год не указан' : MovieData.first_air_date.slice(0, 4) :  MovieData.release_date.slice(0, 4),
-        // vote_average: MovieData.vote_average.toFixed(1),
-        // overview: MovieData.overview,
-        // popularity: MovieData.popularity.toFixed(1),
-        // vote_count: MovieData.vote_count,
-        // original_title: MovieData.original_title,
-        id: MovieData.id
-    }
+//  }
 
-}
+// getMovieObjectForRender(movieArray) {
+//     console.log(movieArray);
+//     if (!movieArray) {return}
+//     return {
+//         poster_path: movieArray.poster_path || movieArray.backdrop_path,
+//         title: movieArray.title || movieArray.original_name,
+//         genres: movieArray.genres ?
+//             movieArray.genres.map(genre => genre.name).join(', ') : this.getMovieGenreIds(movieArray.genre_ids),
+//         year: movieArray.release_date === undefined ? movieArray.first_air_date === undefined ? 'Год не указан' : movieArray.first_air_date.slice(0, 4) :  movieArray.release_date.slice(0, 4),
+//         id: movieArray.id,
+//         vote_average: filmData.vote_average.toFixed(1),
+//     }
+
+// }
 }
