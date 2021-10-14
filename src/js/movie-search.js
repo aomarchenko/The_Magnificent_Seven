@@ -1,6 +1,6 @@
 import movieCardTpl from '../templates/movie-card.hbs';
 import DataBaseApi from './dataBaseApi.js';
-
+import notification from './notification';
 import {replaceData} from './change-data.js';
 import '@pnotify/core/dist/PNotify.css';
 import '../sass/BrightTheme.css';
@@ -10,7 +10,7 @@ import '../sass/BrightTheme.css';
 // import * as PNotifyMobile from '@pnotify/mobile/dist/PNotifyMobile.js';
 // import notification from './notification.js'
 // import '@pnotify/mobile/dist/PNotifyMobile.css';
-import { notification } from './notification';
+// import { notification } from './notification';
 
 const debounce = require('lodash.debounce');
 export const movieList = document.querySelector('.page-film');
@@ -49,15 +49,16 @@ export const onSearchResult = e => {
     }
 
   })
-.catch(() => {
-    alert({
-      title: "Error",
-      text: "There is no films exist with such name. Check your input",
-      type: 'error',
-      delay: 1000,
-      hide: true,
+// .catch(() => {
+//     alert({
+//       title: "Error",
+//       text: "There is no films exist with such name. Check your input",
+//       type: 'error',
+//       delay: 1000,
+//       hide: true,
 
-    })
+//     })
+//   })
     .catch(() => {
       notification.criticalError();
       // alert({
@@ -68,7 +69,7 @@ export const onSearchResult = e => {
       //   hide: true,
       // });
     });
-};
+}
 
 // export function createMovieListMarckup(data) {
 //   movieList.innerHTML = movieCardTpl(data);
