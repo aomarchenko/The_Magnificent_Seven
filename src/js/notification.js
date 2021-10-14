@@ -1,21 +1,35 @@
 import '@pnotify/core/dist/PNotify.css';
 import '../sass/BrightTheme.css';
-import { error, alert } from '@pnotify/core/dist/PNotify.js';
+import { alert } from '@pnotify/core/dist/PNotify.js';
 import * as PNotifyMobile from '@pnotify/mobile/dist/PNotifyMobile.js';
 
 import '@pnotify/mobile/dist/PNotifyMobile.css';
 
-// const mainSearchInput = document.querySelector('.search-input');
-// mainSearchInput.addEventListener('input', searchInputFilter);
-
-// function searchInputFilter(e) {
-//   const query = e.target.value;
-//   let data;
-//   if (query !== '1') {
-//     error({ text: 'There is no films exist with such name. Check your input' });
-//   }
-
-//   //    else if (data.status === 404) {
-//   //     error({ text: 'There is no films exist with such name. Check your input' });
-//   //   }
-// }
+export const notification = {
+  emptyInput() {
+    alert({
+      text: 'Opps! No request! Try again!',
+      type: 'error',
+      delay: 1000,
+      hide: true,
+    });
+  },
+  specifyRequest() {
+    alert({
+      title: "I don't know such movie.",
+      text: 'Please enter a more specific query!',
+      type: 'error',
+      delay: 1000,
+      hide: true,
+    });
+  },
+  criticalError() {
+    alert({
+      title: 'Error',
+      text: 'Critical error has occured. Please, try your request later',
+      type: 'error',
+      delay: 1000,
+      hide: true,
+    });
+  },
+};
