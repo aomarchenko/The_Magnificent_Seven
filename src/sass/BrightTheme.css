@@ -194,6 +194,7 @@
 [data-pnotify] .brighttheme-action-bar,
 [data-pnotify] .brighttheme-prompt-bar {
   width: 100%;
+
   box-sizing: border-box;
 }
 [data-pnotify] .brighttheme-btn {
