@@ -24,3 +24,4 @@ import './js/modal-window';
 import './js/render/renderHeader'
 
 import './js/localStorage';
+import './js/localStoragePage';
