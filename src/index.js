@@ -5,7 +5,7 @@ import 'animate.css/animate.css';
 import './js/components/creatTheme';
 
 
-import './js/change-data';
+// import './js/change-data';
 import './js/home-page';
 import './js/dataBaseApi';
 import './js/movie-search';

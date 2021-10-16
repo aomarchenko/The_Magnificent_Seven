@@ -2,8 +2,8 @@ import movieCardTpl from '../templates/movie-card.hbs';
 import DataBaseApi from './dataBaseApi.js';
 import notification from './notification';
 import {replaceData} from './change-data.js';
-import '@pnotify/core/dist/PNotify.css';
-import '../sass/BrightTheme.css';
+// import '@pnotify/core/dist/PNotify.css';
+// import '../sass/BrightTheme.css';
 
 // import pagination from '../js/pagination'
 // import { error, alert } from '@pnotify/core/dist/PNotify.js';

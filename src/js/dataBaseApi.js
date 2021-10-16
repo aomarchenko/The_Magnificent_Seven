@@ -82,7 +82,7 @@ async searchMovieFetch(){
 //  }
 
 // getMovieObjectForRender(movieArray) {
-//     console.log(movieArray);
+//     console.log(movieArray.genres);
 //     if (!movieArray) {return}
 //     return {
 //         poster_path: movieArray.poster_path || movieArray.backdrop_path,
@@ -94,5 +94,5 @@ async searchMovieFetch(){
 //         vote_average: filmData.vote_average.toFixed(1),
 //     }
 
-// }
+// // }
 }
