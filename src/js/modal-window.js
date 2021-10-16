@@ -4,16 +4,26 @@ const closeModalBtn = document.querySelector('.modal__button-close');
 const modalWindow = document.querySelector('.backdrop');
 const aboutFilmContainer = document.querySelector('.modal__content')
 const filmsContainer = document.querySelector('.page-film');
+const modalContainer = document.querySelector('.modal')
 
 
 filmsContainer.addEventListener('click', modalOpener)
 
 closeModalBtn.addEventListener('click', closeModalFn);
+
 document.addEventListener("keydown", (evt) =>{
-    if(!modalWindow.classList.contains("is-hidden") || evt.code === "Escape"){
+    if(!modalWindow.classList.contains("is-hidden") && evt.code === "Escape"){
         closeModalFn()
     }
 });
+modalContainer.addEventListener('click', (e) =>{
+    if(e.target.className === "modal"){
+        closeModalFn()
+    }
+ 
+})
+
+
 
 function closeModalFn  () {
     modalWindow.classList.add('is-hidden');
