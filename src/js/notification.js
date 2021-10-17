@@ -5,7 +5,7 @@ import * as PNotifyMobile from '@pnotify/mobile/dist/PNotifyMobile.js';
 
 import '@pnotify/mobile/dist/PNotifyMobile.css';
 
-export const notification = {
+export default {
   emptyInput() {
     alert({
       text: 'Opps! No request! Try again!',
