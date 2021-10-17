@@ -1,5 +1,5 @@
 import genres from './genres.json';
-
+import NProgress from 'nprogress';
 export default class DataBaseApi{
     constructor(){
 this.API_KEY = 'aa19f289e41f4e3ac70c0546f19e5928';
@@ -10,14 +10,20 @@ this.page = 1;
 this.request = '';
 this.genres = genres;
     }
-async homePageFetch(){
-    try{
+    async homePageFetch() {
+     NProgress.start();
+    NProgress.configure({ ease: 'ease', speed: 800 });
+        NProgress.configure({ trickleRate: 0.02, trickleSpeed: 500 })
+         NProgress.done();
+    try {
+        
     let response = await fetch(`${this.BASE_URL}${this.trendingRequest}?api_key=${this.API_KEY}`);
     let data = await response.json();
-    let result = await data.results;
+        let result = await data.results;
     //  console.log(result);
         return result; 
     }     
+    
     catch (error){
         alert({
             text: 'error',
@@ -25,7 +31,7 @@ async homePageFetch(){
             hide: true,
             }); 
     }    
-    
+     NProgress.done();
 }
 
 async searchMovieFetch(){         
