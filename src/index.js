@@ -22,7 +22,7 @@ import './js/modal-window';
 
 
 import './js/render/renderHeader'
-
+import './js/render/renderLibrary'
 import './js/localStorage';
 import './js/localStoragePage';
-import './js/render/renderLibrary'
+

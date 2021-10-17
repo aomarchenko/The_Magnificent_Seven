@@ -1,6 +1,5 @@
 import { createMovieGalleryTpl } from '../home-page';
 import NProgress from 'nprogress';
-import nProgress from '../../sass/base/_nprogress.scss';
 import libaryHeader from '../../templates/header-libary.hbs'
 import {
     inputRef,
