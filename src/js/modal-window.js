@@ -24,10 +24,11 @@ function modalOpener(e) {
 
     e.preventDefault()
     const id = e.target.dataset.id;
-
+console.log(id);
     if(e.target.tagName === 'IMG') {
         modalWindow.classList.remove('is-hidden');
         fetchFilm(id);
+        
     }
     
 
@@ -43,7 +44,9 @@ function fetchFilm(id) {
       return res.json();
     })
     .then(film => {
+     
       const markup = filmCardTmpl(film);
+      console.log(markup);
       aboutFilmContainer.innerHTML = markup;
     });
   // stops spinner
