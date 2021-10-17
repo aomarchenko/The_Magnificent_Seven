@@ -1,6 +1,7 @@
 import movieCardTpl from '../templates/movie-card.hbs';
 import DataBaseApi from './dataBaseApi.js';
 import notification from './notification';
+import createMovieGalleryMarkup from './change-data.js';
 import {replaceData} from './change-data.js';
 // import '@pnotify/core/dist/PNotify.css';
 // import '../sass/BrightTheme.css';
@@ -18,7 +19,7 @@ const input = document.querySelector('.search-input');
 
 const dataBaseApi = new DataBaseApi();
 
-export const onSearchResult = e => {
+export const onSearchResult = (e) => {
   e.preventDefault();
   dataBaseApi.request = input.value.trim();
   console.log(dataBaseApi.request);
@@ -32,7 +33,6 @@ export const onSearchResult = e => {
   let promisMoviesArray = dataBaseApi.searchMovieFetch(dataBaseApi.request);
 
   promisMoviesArray
-
   .then(array=>{
     if (array.length === 0) {
       return alert({
@@ -45,7 +45,7 @@ export const onSearchResult = e => {
     }
     if (array.length >= 1) {
       movieList.innerHTML = '';
-      movieList.innerHTML = movieCardTpl(replaceData(array));
+      createMovieGalleryMarkup(array);
     }
 
   })
