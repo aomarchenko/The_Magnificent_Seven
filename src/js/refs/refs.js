@@ -12,7 +12,7 @@ const footertextlink = document.querySelector('.js-footer-link');
 const footercolor = document.querySelector('.js-footer-color');
 const change = document.getElementById('theme-switch-toggle');
 const linkGoit = document.querySelector('.js-goit');
-
+const galleryTps = document.querySelector('.container')
 const teamLink = document.querySelector('.footer__link');
 const teamBackdrop = document.querySelector('.team__backdrop');
 const closeTeamBtn = document.querySelector('.team__modal--btn-close');
@@ -35,4 +35,5 @@ export {
   teamLink,
   teamBackdrop,
   closeTeamBtn,
+  galleryTps,
 };
