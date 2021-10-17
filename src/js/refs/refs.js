@@ -11,7 +11,8 @@ const footertext = document.querySelector('.js-footer');
 const footertextlink = document.querySelector('.js-footer-link');
 const footercolor = document.querySelector('.js-footer-color')
 const change = document.getElementById('theme-switch-toggle');
-const linkGoit = document.querySelector('.js-goit')
+const linkGoit = document.querySelector('.js-goit');
+const galleryTps = document.querySelector('.container')
 
 export {
     inputRef,
@@ -28,4 +29,5 @@ export {
     change,
     linkGoit,
     headerLogoBtn,
+    galleryTps,
 }
