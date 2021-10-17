@@ -11,7 +11,9 @@ const footertext = document.querySelector('.js-footer');
 const footertextlink = document.querySelector('.js-footer-link');
 const footercolor = document.querySelector('.js-footer-color')
 const change = document.getElementById('theme-switch-toggle');
-const linkGoit = document.querySelector('.js-goit')
+const linkGoit = document.querySelector('.js-goit');
+const logInBtn = document.querySelector('#log-in');
+const authorisationBtn = document.querySelector('.authorisation-btn');
 
 export {
     inputRef,
@@ -27,5 +29,7 @@ export {
     footercolor,
     change,
     linkGoit,
-    headerLogoBtn,
+  headerLogoBtn,
+  logInBtn,
+    authorisationBtn,
 }

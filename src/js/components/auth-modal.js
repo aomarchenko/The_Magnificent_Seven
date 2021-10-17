@@ -1,6 +1,24 @@
 import * as basicLightbox from 'basiclightbox';
-import refs from '../refs/refs';
+import getRefs from '../refs/refs';
 import 'basicLightbox/dist/basicLightbox.min.css';
+
+const refs = getRefs();
+
+if (authUser.userId) {
+  refs.logInBtn.classList.add('visually-hidden');
+} else {
+  refs.logInBtn.classList.remove('visually-hidden');
+}
+
+refs.authorisationBtn.addEventListener('click', onLogInLogOut);
+
+function onLogInLogOut(event) {
+  if (event.target.dataset.action === 'log-in') {
+    if (!authUser.userId || authUser.userId === 'undefined') {
+      authUser.openModalAuth();
+    }
+  }
+}
 
 export function onOpenModal(callback) {
   const instance = basicLightbox.create(callback, {
