@@ -1,0 +1,33 @@
+body.dark-theme {
+  background-color: #333333;
+  color: $white-text-color;
+
+  & .library-button {
+    color: $white-text-color;
+    border: 1px solid $white-text-color;
+  }
+  & .arrow-right {
+    stroke: darkgrey;
+  }
+  & .modal__window {
+    background-color: #333333;
+  }
+
+  & .movie__title,
+  .modal__title,
+  .modal__info-value,
+  .modal__description,
+  .moda__about-title {
+    color: #cccccc;
+  }
+
+  & .card__text {
+    color: #ff8800;
+  }
+  & .footer-text {
+    color: lightgrey;
+  }
+  & .footer-link:hover {
+    color: $accent-color;
+  }
+}
