@@ -4,6 +4,7 @@ const pageLibaryBtn = document.querySelector('.js-button-libary');
 const headerRef = document.querySelector('.header');
 const headerLogoBtn = document.querySelector('.header-logo');
 const formRef = document.querySelector('.search-input');
+const movieList = document.querySelector('.page-film');
 const buttonSearchRef = document.querySelector('.search-button');
 const body = document.querySelector('body');
 const footer = document.querySelector('footer');
@@ -19,6 +20,7 @@ const closeTeamBtn = document.querySelector('.team__modal--btn-close');
 const galleryTps = document.querySelector('.container')
 
 export {
+  movieList,
   inputRef,
   pageHomeBtn,
   pageLibaryBtn,

@@ -1,6 +1,6 @@
 import genres from './genres.json';
 import movieCardTpl from '../templates/movie-card.hbs';
-const movieList = document.querySelector('.page-film');
+import {movieList} from '../js/refs/refs.js';
 
 export default function createMovieGalleryMarkup(galleryItems) {
    const items = galleryItems.map(galleryItem => {
