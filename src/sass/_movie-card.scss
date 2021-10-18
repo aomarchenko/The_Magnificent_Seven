@@ -87,7 +87,9 @@
   overflow: hidden;
   &:hover,
   &:focus {
-    box-shadow: 0 6px 4px 0 #757575;
+    // box-shadow: 0 6px 4px 0 #757575;
+    box-shadow: 7px -7px 21px rgb(255 107 1 / 60%);
+    opacity: 0.9;
   }
 }
 .btn_one-card {
