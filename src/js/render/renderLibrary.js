@@ -1,13 +1,14 @@
 import libraryMistake from '../../templates/clear-library.hbs'
+import movieCard from '../../templates/movie-card.hbs'
 import {
     galleryTps,
     pageLibaryBtn,
+    movieList,
     watchedBtn,
     queueBtn,
 } from '../refs/refs'
 
 const watchedId = JSON.parse(localStorage.getItem('watch'));
-// console.log(watchedId);
 
 const queueId = localStorage.getItem('queue');
 
@@ -21,8 +22,14 @@ function fetchFilm(id) {
   fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=aa19f289e41f4e3ac70c0546f19e5928`)
     .then(res => {
       return res.json();
+    })
+    .then(film => {
+      const markup = movieCard(film);
+      console.log(markup);
+      movieList.innerHTML = markup;
     });
 }
+
 
 function clickLibraryBtn() {
   galleryTps.innerHTML = '';
