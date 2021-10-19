@@ -24,6 +24,12 @@
 .dark-theme .login__modal--btn-close {
   color: $film-icon-color;
 }
+.login__ok {
+  font-size: 15px;
+  color: green;
+  text-transform: uppercase;
+  margin-top: 15px;
+}
 
 .login__modal--btn-close {
   position: absolute;
@@ -135,51 +141,6 @@
   color: $film-icon-color;
 }
 
-// .login__list {
-//   display: flex;
-//   justify-content: center;
-//   flex-wrap: wrap;
-
-//   @media screen and (min-width: $tablet) {
-//     margin-left: -30px;
-//     margin-top: -30px;
-//   }
-// }
-
-// .login__item {
-//   &:not(:first-child) {
-//     margin-top: 30px;
-//   }
-
-//   background-color: $white-text-color;
-//   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
-//     0px 2px 1px rgba(0, 0, 0, 0.2);
-//   border-radius: 0px 0px 4px 4px;
-//   border-color: transparent;
-//   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
-//   @media screen and (min-width: $tablet) {
-//     flex-basis: calc((100% - 2 * 30px) / 2);
-//     margin-left: 30px;
-//     margin-top: 30px;
-//   }
-
-//   @media screen and (min-width: $desktop) {
-//     flex-basis: calc((100% - 90px) / 3);
-//     margin-left: 30px;
-//     margin-top: 30px;
-//   }
-// }
-
-// .login__item:hover,
-// .login__item:focus {
-//   box-shadow: 0 4px 4px 0 $modal-description-color;
-// }
-
-// .login__box {
-//   padding: 10px;
-// }
-
 .input__name {
   text-transform: uppercase;
   font-weight: 700;
@@ -192,58 +153,3 @@
 .dark-theme .input__name {
   color: $film-icon-color;
 }
-
-// .login__info {
-//   display: flex;
-//   align-items: center;
-//   justify-content: space-between;
-// }
-
-// .login__proffesion {
-//   font-family: Roboto;
-//   font-style: normal;
-//   font-weight: 500;
-//   font-size: 12px;
-//   line-height: 16px;
-//   color: $accent-color;
-// }
-
-// .social {
-//   display: flex;
-// }
-
-// .social__item {
-//   &:not(:last-child) {
-//     margin-right: 5px;
-//   }
-// }
-
-// .dark-theme .social__link {
-//   &:hover,
-//   &:focus {
-//     color: $film-icon-color;
-//   }
-// }
-
-// .social__link {
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-
-//   width: 30px;
-//   height: 30px;
-//   border-radius: 5px;
-//   color: $accent-color;
-//   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-//   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
-//   &:hover,
-//   &:focus {
-//     color: $white-text-color;
-//     background-color: $hover-color;
-//   }
-// }
-
-// .social__svg {
-//   fill: currentColor;
-// }

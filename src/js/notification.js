@@ -50,4 +50,13 @@ export default {
       hide: true,
     });
   },
+  loginSucces() {
+    alert({
+      title: 'Succes',
+      text: 'Login success',
+      type: 'error',
+      delay: 1000,
+      hide: true,
+    });
+  },
 };
