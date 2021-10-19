@@ -30,18 +30,11 @@ logOutButton.addEventListener('click', clearStorageValue());
 loginForm.addEventListener('click', onSubmit);
 loginLink.addEventListener('click', openModal);
 const homeLink = document.querySelector('.js-button-home');
-// homeLink.addEventListener('click', setStorageValue());
 
 function setStorageValue() {
   localStorage.setItem('islogin', true);
 }
-// function resetPage() {
-//   if (null) {
-//     console.log('hiii');
-//     logOutButton.classList.add('is-hidden');
-//     loginButtonToHide.classList.remove('is-hidden');
-//   }
-// }
+
 export default function getStorageValue() {
   localStorage.getItem('islogin');
   if (true) {
@@ -49,33 +42,25 @@ export default function getStorageValue() {
 
     loginButtonToHide.classList.add('is-hidden');
   }
-
-  //   logOutButton.classList.add('is-hidden');
-  //   loginButtonToHide.classList.remove('is-hidden');
 }
 function clearStorageValue() {
   localStorage.removeItem('islogin');
-  // resetPage();
-  // logOutButton.classList.add('is-hidden');
-  // loginButtonToHide.classList.remove('is-hidden');
 }
 function onSubmit(e) {
   e.preventDefault(e);
-  //   console.log(e.target);
+
   let email = e.currentTarget.elements.mailfield.value;
   let password = e.currentTarget.elements.passwordfield.value;
   if (e.target === createAccountButton) {
     createUserWithEmailAndPassword(auth, email, password)
       .then(userCredential => {
-        // Signed in
         const user = userCredential.user;
-        // ...
 
         loginForm.insertAdjacentHTML(
           'beforeend',
           '<p class="login__ok">Account created succesfully, now LOGIN please</p>',
         );
-        console.log('ok');
+
         notification.createUserSucces();
       })
 
@@ -83,14 +68,11 @@ function onSubmit(e) {
         notification.loginError();
         const errorCode = error.code;
         const errorMessage = error.message;
-        // ..
       });
   } else if (e.target === loginButton) {
     signInWithEmailAndPassword(auth, email, password)
       .then(userCredential => {
-        // Signed in
         const user = userCredential.user;
-        // ...
 
         notification.loginSucces();
         closeModal();
