@@ -15,7 +15,6 @@ function createMovieGalleryTpl() {
   NProgress.configure({ trickleRate: 0.02, trickleSpeed: 500 });
   const results = dataBaseApi.homePageFetch();
   results.then(array => {
-
     createMovieGalleryMarkup(array);
 
     // movieList.insertAdjacentHTML('beforeend', movieCardTpl(array));
@@ -26,10 +25,8 @@ function createMovieGalleryTpl() {
     // ================
   });
   return;
-
 }
 
 createMovieGalleryTpl();
 
 export { createMovieGalleryTpl };
-
