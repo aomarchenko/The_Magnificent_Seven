@@ -70,4 +70,4 @@ const t=document.querySelector(".page-film");t.addEventListener("click",t=>{cons
 },{}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss"),require("animate.css/animate.css"),require("./js/components/creatTheme"),require("./js/change-data"),require("./js/home-page"),require("./js/dataBaseApi"),require("./js/movie-search"),require("./js/components/back-to-top"),require("./js/team"),require("./js/modal-window"),require("./js/render/renderHeader"),require("./js/render/renderLibrary"),require("./js/localStorage"),require("./js/localStoragePage");
 },{"./sass/main.scss":"clu1","animate.css/animate.css":"Y5dV","./js/components/creatTheme":"aOiL","./js/change-data":"dhhh","./js/home-page":"Lxcc","./js/dataBaseApi":"Wbpo","./js/movie-search":"Hhot","./js/components/back-to-top":"X8Wl","./js/team":"ZxpD","./js/modal-window":"WcsN","./js/render/renderHeader":"LEWP","./js/render/renderLibrary":"LsVC","./js/localStorage":"nnQC","./js/localStoragePage":"btAX"}]},{},["Focm"], null)
-//# sourceMappingURL=/The_Magnificent_Seven/src.95986b7d.js.map
+//# sourceMappingURL=/The_Magnificent_Seven/src.f1471c0c.js.map
