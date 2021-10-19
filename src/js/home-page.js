@@ -3,7 +3,10 @@ import NProgress from 'nprogress';
 // import { opts, spinner, target } from './spinner';
 import DataBaseApi from './dataBaseApi.js';
 import createMovieGalleryMarkup from './change-data.js';
-
+import getStorageValue from './firebase';
+// import resetPage from './firebase';
+// getStorageValue();
+// resetPage();
 const dataBaseApi = new DataBaseApi();
 
 function createMovieGalleryTpl() {
@@ -15,7 +18,6 @@ function createMovieGalleryTpl() {
   NProgress.configure({ trickleRate: 0.02, trickleSpeed: 500 });
   const results = dataBaseApi.homePageFetch();
   results.then(array => {
-
     createMovieGalleryMarkup(array);
 
     // movieList.insertAdjacentHTML('beforeend', movieCardTpl(array));
@@ -26,10 +28,8 @@ function createMovieGalleryTpl() {
     // ================
   });
   return;
-
 }
 
 createMovieGalleryTpl();
 
 export { createMovieGalleryTpl };
-
