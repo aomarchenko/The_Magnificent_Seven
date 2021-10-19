@@ -10,6 +10,8 @@ import {
 
 const watchedId = JSON.parse(localStorage.getItem('watch'));
 
+console.log(watchedId);
+
 const queueId = localStorage.getItem('queue');
 
 
@@ -23,11 +25,12 @@ function fetchFilm(id) {
     .then(res => {
       return res.json();
     })
-    .then(film => {
-      const markup = movieCard(film);
-      console.log(markup);
-      movieList.innerHTML = markup;
-    });
+    
+    // .then(film => {
+    //   const markup = movieCard(film);
+    //   console.log(markup);
+    //   movieList.innerHTML = markup;
+    // });
 }
 
 
