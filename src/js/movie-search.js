@@ -31,9 +31,9 @@ export const onSearchResult = (e) => {
       createMovieGalleryMarkup(array);
 
       
-      /////ресет пагінації/////
+   
       pagination.reset();
-=======
+
 
     }
 
