@@ -8,9 +8,6 @@ import {
     queueBtn,
 } from '../refs/refs'
 
-const watchedId = JSON.parse(localStorage.getItem('watch'));
-
-console.log(watchedId);
 
 const queueId = localStorage.getItem('queue');
 
@@ -25,7 +22,6 @@ function fetchFilm(id) {
     .then(res => {
       return res.json();
     })
-    
     // .then(film => {
     //   const markup = movieCard(film);
     //   console.log(markup);
@@ -47,10 +43,15 @@ function refreshPage() {
 //   fetchFilm(watchedId);
 // }
 
-function libraryRender(e) {  
+
+function libraryRender(e) {
+  const watchedId = JSON.parse(localStorage.getItem('watch'));
+  console.log(watchedId)
   clickLibraryBtn();
   if (watchedId) {
-    fetchFilm(watchedId);
+    for (let id of watchedId) {
+        fetchFilm(id)
+    }
   }
   else {
     const clearMarkup = libraryMistake();
@@ -59,7 +60,6 @@ function libraryRender(e) {
     btnGoHome.addEventListener('click', refreshPage);
   }
 }
-
 
 
 // function clickWatched(btnWatchedLib, btnQueueLib) {
