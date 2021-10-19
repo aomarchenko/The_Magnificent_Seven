@@ -1,4 +1,4 @@
-import movieCardTpl from '../templates/movie-card.hbs';
+import {movieList, formRef} from '../js/refs/refs';
 import DataBaseApi from './dataBaseApi.js';
 import notification from './notification';
 import createMovieGalleryMarkup from './change-data.js';
@@ -6,14 +6,11 @@ import createMovieGalleryMarkup from './change-data.js';
 
 
 const debounce = require('lodash.debounce');
-export const movieList = document.querySelector('.page-film');
-const input = document.querySelector('.search-input');
-
 const dataBaseApi = new DataBaseApi();
 
 export const onSearchResult = (e) => {
   e.preventDefault();
-  dataBaseApi.request = input.value.trim();
+  dataBaseApi.request = formRef.value.trim();
   console.log(dataBaseApi.request);
   if (!dataBaseApi.request) return;
 
@@ -35,4 +32,4 @@ export const onSearchResult = (e) => {
       notification.criticalError();
     });
 }
-input.addEventListener('input', debounce(onSearchResult, 500));
+formRef.addEventListener('input', debounce(onSearchResult, 500));

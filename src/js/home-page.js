@@ -1,10 +1,5 @@
 import NProgress from 'nprogress';
 // import NProgress from 'nprogress';
-
-import movieCardTpl from '../templates/movie-card.hbs';
-
-import genres from './genres.json';
-
 // import { opts, spinner, target } from './spinner';
 import DataBaseApi from './dataBaseApi.js';
 import createMovieGalleryMarkup from './change-data.js';
