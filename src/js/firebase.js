@@ -24,10 +24,41 @@ const loginButton = document.querySelector('.login_modal--btn-login');
 const libraryButtonToShow = document.querySelector('.js-button-libary');
 const loginButtonToHide = document.querySelector('.js-button-login');
 const createAccountButton = document.querySelector('.login_modal--btn-create-acnt');
-
+const headerNav = document.querySelector('header-nav');
+const logOutButton = document.querySelector('.js-button-logout');
+logOutButton.addEventListener('click', clearStorageValue());
 loginForm.addEventListener('click', onSubmit);
 loginLink.addEventListener('click', openModal);
+const homeLink = document.querySelector('.js-button-home');
+// homeLink.addEventListener('click', setStorageValue());
 
+function setStorageValue() {
+  localStorage.setItem('islogin', true);
+}
+// function resetPage() {
+//   if (null) {
+//     console.log('hiii');
+//     logOutButton.classList.add('is-hidden');
+//     loginButtonToHide.classList.remove('is-hidden');
+//   }
+// }
+export default function getStorageValue() {
+  localStorage.getItem('islogin');
+  if (true) {
+    logOutButton.classList.remove('is-hidden');
+
+    loginButtonToHide.classList.add('is-hidden');
+  }
+
+  //   logOutButton.classList.add('is-hidden');
+  //   loginButtonToHide.classList.remove('is-hidden');
+}
+function clearStorageValue() {
+  localStorage.removeItem('islogin');
+  // resetPage();
+  // logOutButton.classList.add('is-hidden');
+  // loginButtonToHide.classList.remove('is-hidden');
+}
 function onSubmit(e) {
   e.preventDefault(e);
   //   console.log(e.target);
@@ -61,11 +92,12 @@ function onSubmit(e) {
         const user = userCredential.user;
         // ...
 
-        console.log('ok');
         notification.loginSucces();
         closeModal();
         libraryButtonToShow.classList.remove('is-hidden');
         loginButtonToHide.classList.add('is-hidden');
+        setStorageValue();
+        getStorageValue();
       })
       .catch(error => {
         notification.loginError();

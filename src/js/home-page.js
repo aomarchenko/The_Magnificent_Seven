@@ -3,7 +3,10 @@ import NProgress from 'nprogress';
 // import { opts, spinner, target } from './spinner';
 import DataBaseApi from './dataBaseApi.js';
 import createMovieGalleryMarkup from './change-data.js';
-
+import getStorageValue from './firebase';
+// import resetPage from './firebase';
+// getStorageValue();
+// resetPage();
 const dataBaseApi = new DataBaseApi();
 
 function createMovieGalleryTpl() {
