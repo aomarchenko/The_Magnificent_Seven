@@ -9,6 +9,7 @@ import {
 } from '../refs/refs'
 
 
+
 // const watchedId = JSON.parse(localStorage.getItem('watch'));
 
 // console.log(watchedId);
@@ -33,11 +34,13 @@ import {
     
 
 
+
     // .then(film => {
     //   const markup = movieCard(film);
     //   console.log(markup);
     //   movieList.innerHTML = markup;
     // });
+
 // }
 
 
@@ -49,10 +52,12 @@ import {
 //   document.location.reload();
 // }
 
+
 // function watchedRender(e) {
 //   e.preventDefault(); 
 //   fetchFilm(watchedId);
 // }
+
 
 
 // function libraryRender(e) {  
@@ -67,6 +72,7 @@ import {
 //     btnGoHome.addEventListener('click', refreshPage);
 //   }
 // }
+
 
 
 
@@ -109,3 +115,4 @@ import {
 //   } 
 
 // }
+

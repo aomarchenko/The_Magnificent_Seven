@@ -24,7 +24,9 @@ function modalOpener(e) {
 
     e.preventDefault()
     const id = e.target.dataset.id;
+
     console.log(id);
+
     if(e.target.tagName === 'IMG') {
         modalWindow.classList.remove('is-hidden');
         fetchFilm(id);

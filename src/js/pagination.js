@@ -1,10 +1,10 @@
+////////////////////імпорти///////////
 import Pagination from 'tui-pagination';
 import 'tui-pagination/dist/tui-pagination.css';
+import {formRef} from '../js/refs/refs';
 import {dataBaseApi} from './dataBaseApi.js';
-import {createMovieListMarckup} from './movie-search'
-
-
-
+import createMovieGalleryMarkup from './change-data.js';
+/////////////////// налаштування///////////
 const options = {
     itemsPerPage: 20,
     visiblePages: 5,
@@ -34,34 +34,44 @@ const container = document.getElementById('pagination');
 const pagination = new Pagination(container, options);
 
 
-
+///////////////////основні функції///////////
 
 
 pagination.on('beforeMove', async event => {
     const currentPage = event.page;
-   
+    dataBaseApi.request = formRef.value.trim();
     dataBaseApi.page = currentPage;
+    
+    //console.log(dataBaseApi.request)
+    //console.log(dataBaseApi.totalPages)
     //console.log(dataBaseApi.page)
-    const movie = await dataBaseApi.searchMovieFetch();
-    //console.log(movie)
-    createMovieListMarckup(movie.results)
+    const movie = await dataBaseApi.searchPageFetch(dataBaseApi.request);
+    
+    //console.log(dataBaseApi.request)
+    dataBaseApi.totalPages = movie.total_pages
+    //console.log(movie.total_pages)
+    //console.log(movie.results)
+    createMovieGalleryMarkup(movie.results)
     });
   
     
-  let totalItemsFromServer;
+  let totalItems;
   
- const init = async total => {
-  if (total === undefined && !totalItemsFromServer)
-   totalItemsFromServer = await dataBaseApi.searchMovieFetch();
+const init = async total => {
+  if (total === undefined && !totalItems)
+   totalItems = await dataBaseApi.searchPageFetch();
   
-  if (total === undefined) total = totalItemsFromServer.total_results;
+ if (total === undefined) total = totalItems.total_pages;
+
+ //console.log(total)
   
  pagination.setTotalItems(total);
  pagination.reset();
- };
+};
   
  init();
   
+//////експорт для ресета сторінок/////// 
  export default {
    reset: init,
 };

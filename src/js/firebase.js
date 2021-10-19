@@ -24,6 +24,7 @@ const loginButton = document.querySelector('.login_modal--btn-login');
 const libraryButtonToShow = document.querySelector('.js-button-libary');
 const loginButtonToHide = document.querySelector('.js-button-login');
 const createAccountButton = document.querySelector('.login_modal--btn-create-acnt');
+
 const headerNav = document.querySelector('header-nav');
 const logOutButton = document.querySelector('.js-button-logout');
 logOutButton.addEventListener('click', clearStorageValue());
@@ -49,17 +50,22 @@ function clearStorageValue() {
 function onSubmit(e) {
   e.preventDefault(e);
 
+
   let email = e.currentTarget.elements.mailfield.value;
   let password = e.currentTarget.elements.passwordfield.value;
   if (e.target === createAccountButton) {
     createUserWithEmailAndPassword(auth, email, password)
       .then(userCredential => {
+
         const user = userCredential.user;
+
 
         loginForm.insertAdjacentHTML(
           'beforeend',
           '<p class="login__ok">Account created succesfully, now LOGIN please</p>',
         );
+
+
 
         notification.createUserSucces();
       })
@@ -68,18 +74,24 @@ function onSubmit(e) {
         notification.loginError();
         const errorCode = error.code;
         const errorMessage = error.message;
+
+
       });
   } else if (e.target === loginButton) {
     signInWithEmailAndPassword(auth, email, password)
       .then(userCredential => {
+
         const user = userCredential.user;
+
 
         notification.loginSucces();
         closeModal();
         libraryButtonToShow.classList.remove('is-hidden');
         loginButtonToHide.classList.add('is-hidden');
+
         setStorageValue();
         getStorageValue();
+
       })
       .catch(error => {
         notification.loginError();

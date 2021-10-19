@@ -1,6 +1,8 @@
 import NProgress from 'nprogress';
 // import NProgress from 'nprogress';
+
 import { opts, spinner, target } from './spinner';
+
 import DataBaseApi from './dataBaseApi.js';
 import createMovieGalleryMarkup from './change-data.js';
 
@@ -15,6 +17,7 @@ function createMovieGalleryTpl() {
   NProgress.configure({ trickleRate: 0.02, trickleSpeed: 500 });
   const results = dataBaseApi.homePageFetch();
   results.then(array => {
+
     createMovieGalleryMarkup(array);
 
     // movieList.insertAdjacentHTML('beforeend', movieCardTpl(array));
@@ -25,8 +28,10 @@ function createMovieGalleryTpl() {
     // ================
   });
   return;
+
 }
 
 createMovieGalleryTpl();
 
 export { createMovieGalleryTpl };
+
