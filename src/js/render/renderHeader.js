@@ -95,3 +95,8 @@ function renderPageLogo(e) {
 }
 
 headerLogoBtn.addEventListener('click', renderPageLogo);
+
+
+
+
+
