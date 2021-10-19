@@ -21,6 +21,8 @@ const closeLoginBtn = document.querySelector('.login__modal--btn-close');
 const loginLink = document.querySelector('.js-button-login');
 const loginForm = document.querySelector('.login');
 const loginButton = document.querySelector('.login_modal--btn-login');
+const libraryButtonToShow = document.querySelector('.js-button-libary');
+const loginButtonToHide = document.querySelector('.js-button-login');
 const createAccountButton = document.querySelector('.login_modal--btn-create-acnt');
 
 loginForm.addEventListener('click', onSubmit);
@@ -37,8 +39,13 @@ function onSubmit(e) {
         // Signed in
         const user = userCredential.user;
         // ...
-        createUserSucces();
+
+        loginForm.insertAdjacentHTML(
+          'beforeend',
+          '<p class="login__ok">Account created succesfully, now LOGIN please</p>',
+        );
         console.log('ok');
+        notification.createUserSucces();
       })
 
       .catch(error => {
@@ -55,6 +62,10 @@ function onSubmit(e) {
         // ...
 
         console.log('ok');
+        notification.loginSucces();
+        closeModal();
+        libraryButtonToShow.classList.remove('is-hidden');
+        loginButtonToHide.classList.add('is-hidden');
       })
       .catch(error => {
         notification.loginError();
