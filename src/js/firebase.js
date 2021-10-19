@@ -29,6 +29,8 @@ const logOutButton = document.querySelector('.js-button-logout');
 logOutButton.addEventListener('click', clearStorageValue());
 loginForm.addEventListener('click', onSubmit);
 loginLink.addEventListener('click', openModal);
+const homeLink = document.querySelector('.js-button-home');
+// homeLink.addEventListener('click', setStorageValue());
 
 function setStorageValue() {
   localStorage.setItem('islogin', true);
