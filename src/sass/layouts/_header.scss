@@ -5,135 +5,137 @@
   height: 230px;
   padding: 45px 20px;
   font-family: $font-family;
-  font-weight: 500;
+  font-weight: $font-weight;
   background-color: $header-gradient;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+  background-image: linear-gradient(to right, $gradient-background, $gradient-background),
     url('../images/desk.jpg');
   color: $white-text-color;
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: $tablet) {
     padding: 45px 60px 20px;
   }
-  @media screen and (min-width: 1024px) {
+  @media screen and (min-width: $desktop) {
     padding-top: 40px;
   }
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: $to-tablet) {
     .header {
-      background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+      background-image: linear-gradient(to right, $gradient-background, $gradient-background),
         url(../images/mob.jpg);
     }
   }
-  @media screen and (min-width: 768px) and (max-width: 1023px) {
+  @media screen and (min-width: $tablet) and (max-width: $to-desktop) {
     .header {
-      background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+      background-image: linear-gradient(to right, $gradient-background, $gradient-background),
         url(../images/tab.jpg);
     }
   }
-  @media screen and (min-width: 1024px) {
+  @media screen and (min-width: $desktop) {
     .header {
-      background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+      background-image: linear-gradient(to right, $gradient-background, $gradient-background),
         url(../images/desk.jpg);
     }
   }
-  @media screen and (min-device-pixel-ratio: 2) and (min-width: 1024px),
-    screen and (min-resolution: 192dpi) and (min-width: 1024px),
-    screen and (min-resolution: 2dppx) and (min-width: 1024px) {
+  @media screen and (min-device-pixel-ratio: 2) and (min-width: $desktop),
+    screen and (min-resolution: 192dpi) and (min-width: $desktop),
+    screen and (min-resolution: 2dppx) and (min-width: $desktop) {
     .header {
-      background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+      background-image: linear-gradient(to right, $gradient-background, $gradient-background),
         url(../images/desk@2x.jpg);
     }
   }
-  @media screen and (min-device-pixel-ratio: 2) and (min-width: 768px),
-    screen and (min-resolution: 192dpi) and (min-width: 768px),
-    screen and (min-resolution: 2dppx) and (min-width: 768px) {
+  @media screen and (min-device-pixel-ratio: 2) and (min-width: $tablet),
+    screen and (min-resolution: 192dpi) and (min-width: $tablet),
+    screen and (min-resolution: 2dppx) and (min-width: $tablet) {
     .header {
-      background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+      background-image: linear-gradient(to right, $gradient-background, $gradient-background),
         url(../images/tab@2x.jpg);
     }
   }
 
-  @media screen and (min-device-pixel-ratio: 2) and (max-width: 767.9px),
-    screen and (min-resolution: 192dpi) and (max-width: 767.98px),
-    screen and (min-resolution: 2dppx) and (max-width: 767.9px) {
+  @media screen and (min-device-pixel-ratio: 2) and (max-width: $to-tablet),
+    screen and (min-resolution: 192dpi) and (max-width: $to-tablet),
+    screen and (min-resolution: 2dppx) and (max-width: $to-tablet) {
     .header {
-      background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+      background-image: linear-gradient(to right, $gradient-background, $gradient-background),
         url(../images/mob@2x.jpg);
     }
   }
 }
 
 .header-library {
-  background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+  background-image: linear-gradient(to right, $gradient-background, $gradient-background),
     url('../images/library-desk.jpg');
 
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: $to-tablet) {
     .header-library {
-      background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+      background-image: linear-gradient(to right, $gradient-background, $gradient-background),
         url(../images/library-mob.jpg);
     }
   }
-  @media screen and (min-width: 768px) and (max-width: 1023px) {
+  @media screen and (min-width: $tablet) and (max-width: $to-desktop) {
     .header-library {
-      background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+      background-image: linear-gradient(to right, $gradient-background, $gradient-background),
         url(../images/library-tab.jpg);
     }
   }
-  @media screen and (min-width: 1024px) {
+  @media screen and (min-width: $desktop) {
     .header-library {
-      background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+      background-image: linear-gradient(to right, $gradient-background, $gradient-background),
         url(../images/library-desk.jpg);
     }
   }
-  @media screen and (min-device-pixel-ratio: 2) and (min-width: 1024px),
-    screen and (min-resolution: 192dpi) and (min-width: 1024px),
-    screen and (min-resolution: 2dppx) and (min-width: 1024px) {
+  @media screen and (min-device-pixel-ratio: 2) and (min-width: $desktop),
+    screen and (min-resolution: 192dpi) and (min-width: $desktop),
+    screen and (min-resolution: 2dppx) and (min-width: $desktop) {
     .header-library {
-      background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+      background-image: linear-gradient(to right, $gradient-background, $gradient-background),
         url(../images/library-desk@2x.jpg);
     }
   }
-  @media screen and (min-device-pixel-ratio: 2) and (min-width: 768px),
-    screen and (min-resolution: 192dpi) and (min-width: 768px),
-    screen and (min-resolution: 2dppx) and (min-width: 768px) {
+  @media screen and (min-device-pixel-ratio: 2) and (min-width: $tablet),
+    screen and (min-resolution: 192dpi) and (min-width: $tablet),
+    screen and (min-resolution: 2dppx) and (min-width: $tablet) {
     .header-library {
-      background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+      background-image: linear-gradient(to right, $gradient-background, $gradient-background),
         url(../images/library-tab@2x.jpg);
     }
   }
 
-  @media screen and (min-device-pixel-ratio: 2) and (max-width: 767.9px),
-    screen and (min-resolution: 192dpi) and (max-width: 767.98px),
-    screen and (min-resolution: 2dppx) and (max-width: 767.9px) {
+  @media screen and (min-device-pixel-ratio: 2) and (max-width: $to-tablet),
+    screen and (min-resolution: 192dpi) and (max-width: $to-tablet),
+    screen and (min-resolution: 2dppx) and (max-width: $to-tablet) {
     .header-library {
-      background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+      background-image: linear-gradient(to right, $gradient-background, $gradient-background),
         url(../images/library-mob@2x.jpg);
     }
   }
 }
-
+.header-home-page {
+  text-transform: uppercase;
+}
 .navigation-container {
   display: flex;
   align-items: center;
   justify-content: center;
 
-  @media screen and (min-width: 1024px) {
+  @media screen and (min-width: $desktop) {
     padding: 0;
   }
 }
 .header-logo {
   display: flex;
   align-self: flex-end;
-  transition-duration: 0.25s;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  @media screen and (max-width: 767px) {
+  transition-duration: $transition-duration;
+  transition-timing-function: $timing-function;
+  @media screen and (max-width: $to-tablet) {
     margin-right: 112px;
   }
-  @media screen and (min-width: 768px) and (max-width: 1023px) {
+  @media screen and (min-width: $tablet) and (max-width: $to-desktop) {
     margin-right: 303px;
   }
-  @media screen and (min-width: 1024px) {
+  @media screen and (min-width: $desktop) {
     margin-right: 564px;
   }
   &:hover,
@@ -145,33 +147,33 @@
 .icon-film {
   animation: backInLeft;
   animation-duration: 1000ms;
-  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  animation-timing-function: $timing-function;
 }
 .header-logo__svg {
   width: 24px;
   height: 24px;
   fill: $film-icon-color;
-  transition-duration: 0.25s;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: $transition-duration;
+  transition-timing-function: $timing-function;
 
   &:hover,
   &:focus {
     stroke: $accent-color;
     animation-play-state: paused;
   }
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: $tablet) {
     margin-right: 10px;
     margin-top: 14px;
   }
 }
 .logo-text {
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: $to-tablet) {
     display: none;
   }
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: $tablet) {
     font-size: 30px;
     line-height: 1.72;
-    font-weight: 500;
+    font-weight: $font-weight;
     color: $white-text-color;
   }
 }
@@ -187,8 +189,8 @@
   line-height: 1.16;
   color: $white-text-color;
   text-transform: uppercase;
-  transition-duration: 0.25s;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: $transition-duration;
+  transition-timing-function: $timing-function;
 
   &:hover,
   &:active,
@@ -225,10 +227,10 @@
   margin: 41px auto 22px;
   justify-content: center;
 
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: $to-tablet) {
     margin-bottom: 41px;
   }
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: $tablet) {
     margin-bottom: 20px;
   }
 }
@@ -244,13 +246,13 @@
   padding: 4px 0;
   background-color: transparent;
   color: $white-text-color;
-  transition-duration: 0.25s;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: $transition-duration;
+  transition-timing-function: $timing-function;
   &:hover,
   &:focus {
     border-bottom: 0.5px solid $accent-color;
   }
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: $tablet) {
     width: 336px;
   }
 }
@@ -277,24 +279,14 @@
   right: 0;
   bottom: 5px;
   stroke: $white-text-color;
-  transition-duration: 0.25s;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: $transition-duration;
+  transition-timing-function: $timing-function;
   &:hover,
   &:focus {
     stroke: $accent-color;
     cursor: pointer;
   }
 }
-body.light-theme {
-  background-color: #fff;
-  color: #333333;
-}
-
-body.dark-theme {
-  background-color: #333333;
-  color: #fff;
-}
-
 .toolbar {
   display: flex;
   justify-content: flex-end;
@@ -314,21 +306,21 @@ body.dark-theme {
   border-radius: 5px;
   background-color: transparent;
   color: $white-text-color;
-  font-weight: 500;
-  transition-duration: 0.25s;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  font-weight: font-weight;
+  transition-duration: $transition-duration;
+  transition-timing-function: $timing-function;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: $tablet) {
     width: 136px;
   }
   &:hover,
   &:focus {
-    border: 1px solid #ff6b01;
-    background: #ff6b01;
+    border: 1px solid $hover-color;
+    background: $hover-color;
     box-shadow: 0 8px 43px rgb(255 107 1 / 60%);
     transition-property: background-color;
-    transition-duration: 0.25s;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: $transition-duration;
+    transition-timing-function: $timing-function;
     cursor: pointer;
   }
 }
@@ -336,7 +328,7 @@ body.dark-theme {
 .library__btn:not(:last-child) {
   margin-right: 20px;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: $tablet) {
     margin-right: 15px;
   }
 }
@@ -344,127 +336,8 @@ body.dark-theme {
   background: $accent-color;
   border: transparent;
 }
-
-// .toolbar__btn:hover,
-// .toolbar__btn:focus {
-//   background: $accent-color;
-//   border: transparent;
-// }
 .display-none {
   display: none;
-}
-
-.footer.dark-theme {
-  background-color: #222;
-}
-.js-footer.light-theme {
-  color: #333333;
-}
-.js-footer.dark-theme {
-  color: #d3d3d4;
-}
-.js-footer-link.dark-theme {
-  color: #d3d3d4;
-}
-.js-footer-link.light-theme {
-  color: #333333;
-}
-.js-footer-color.dark-theme {
-  color: #d3d3d4;
-}
-.js-footer-color.light-theme {
-  color: #333333;
-}
-.js-goit.dark-theme {
-  color: #d3d3d4;
-}
-.js-footer-color.light-theme {
-  color: #333333;
-}
-
-/* THEME SWITCH */
-.theme-switch {
-  display: flex;
-  align-items: center;
-}
-
-.theme-switch__icon {
-  color: currentColor;
-  height: 12px;
-  width: 12px;
-  margin-right: 8px;
-  margin-left: 8px;
-}
-
-.theme-switch__control {
-  display: flex;
-  align-items: center;
-  flex-shrink: 0;
-  position: relative;
-  width: 35px;
-  height: 20px;
-  border-radius: 50em;
-  padding: 3px 0;
-}
-
-.theme-switch__toggle {
-  position: absolute;
-  left: 0;
-  top: 0;
-  margin: 0;
-  padding: 0;
-  opacity: 0;
-  height: 0;
-  width: 0;
-  pointer-events: none;
-}
-
-.theme-switch__track {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  color: transparent;
-  user-select: none;
-  background-color: #333;
-  border-radius: inherit;
-  z-index: 1;
-  cursor: pointer;
-}
-
-.theme-switch__marker {
-  position: relative;
-  background-color: #fff;
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  z-index: 2;
-  pointer-events: none;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
-  transform: translateX(3px);
-  transition: transform 250ms var(--timing-function);
-}
-
-.theme-switch__toggle:checked + .theme-switch__track {
-  background-color: #d3d3d4;
-}
-
-.theme-switch__toggle:checked ~ .theme-switch__marker {
-  transform: translateX(18px);
-}
-
-.theme-switch__toggle:focus + .theme-switch__track,
-.theme-switch__toggle:active + .theme-switch__track {
-  box-shadow: 0 0 0 3px #2196f3;
-}
-// .dark-theme {
-//   color: #d3d3d4;
-//   background-color: #222;
-// }
-.animation {
-  animation-duration: 2000ms;
-  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .header-home-page {
   text-transform: uppercase;
