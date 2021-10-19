@@ -1,33 +1,45 @@
 import genres from './genres.json';
+import movieCardTpl from '../templates/movie-card.hbs';
+const movieList = document.querySelector('.page-film');
 
-const replaceData = (array => {
-    console.log(array);
-        return array.map(el => {
-            if (el.release_date) {
-                el.release_date = new Date(el.release_date).getFullYear();
-            }
-            el.genre_ids = getNameGenres(el);
-            return el;
-        })
+export default function createMovieGalleryMarkup(galleryItems) {
+   const items = galleryItems.map(galleryItem => {
+    const { 
+      title, 
+      poster_path, 
+      id, 
+      original_title, 
+      release_date, 
+      vote_average, 
+      genre_ids } =
+      galleryItem;
+      
+    let genreName = [];
+    
+   if (genre_ids.length > 3) {
+      genre_ids.length = 3;
+      genre_ids[2] = ' Other';
+  } 
+
+   genres.map(genre => { 
+      if(genre_ids.includes(Number(genre.id)))
+      return genreName.push(genre.name);
+      
     })
-    // console.log(replaceYear());
-  
-  const getNameGenres = (movieArray => {
-        console.log(movieArray);
-        if (movieArray.genre_ids.length > 3) {
-            movieArray.genre_ids.length = 3;
-            movieArray.genre_ids[2] = ' Other';
-        }
-        return movieArray.genre_ids.map((genreId, id) => {
-            for (const num of genres) {
-                if (num.id === genreId) {
-                    if (id === 0) 
-                    return num.name;
-                    
-                }
-            }
-            return genreId;
-        })
-    })
-  // console.log(replaceGenres(movieArray));
-  export {replaceData, getNameGenres}
+    
+return galleryItem = {
+  title,
+  poster_path,
+  id,
+  original_title,
+  release_date: release_date.slice(0, 4),
+  vote_average,
+  genre_ids: genreName
+};
+})
+//movieList.insertAdjacentHTML('beforeend', movieCardTpl(items));
+
+///рендер кожної сторінки/////
+movieList.innerHTML = movieCardTpl(items);
+//console.log(items)
+}

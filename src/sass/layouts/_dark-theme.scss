@@ -1,0 +1,112 @@
+body.light-theme {
+  background-color: $white-text-color;
+  color: $primary-color;
+}
+
+body.dark-theme {
+  background-color: $primary-color;
+  color: $white-text-color;
+
+  & .library-button {
+    color: $white-text-color;
+    border: 1px solid $white-text-color;
+    &:hover,
+    &:focus {
+      border: 1px solid $accent-color;
+    }
+  }
+  & .arrow-right {
+    stroke: darkgrey;
+  }
+  & .modal__window,
+  .team__modal,
+  .team__box {
+    background-color: $primary-color;
+  }
+  & .color-switch {
+    stroke: $film-icon-color;
+    &:hover,
+    &:focus {
+      stroke: $accent-color;
+    }
+  }
+  & .movie__title,
+  .modal__title,
+  .modal__info-value,
+  .modal__description,
+  .moda__about-title,
+  .team__modal--btn-close,
+  .team__title,
+  .team__name {
+    color: #cccccc;
+  }
+
+  .social__link {
+    &:hover,
+    &:focus {
+      color: #cccccc;
+    }
+  }
+
+  & .team__modal--btn-close {
+    &:hover,
+    &:focus {
+      color: $hover-color;
+    }
+  }
+
+  & .card__text {
+    color: #ff8800;
+  }
+  & .footer-text {
+    color: lightgrey;
+  }
+  & .team__item {
+    &:hover,
+    &:focus {
+      // box-shadow: 0 6px 4px 0 #757575;
+      box-shadow: 7px -7px 21px rgb(255 107 1 / 60%);
+      opacity: 0.9;
+    }
+  }
+  & .movie__item {
+    position: relative;
+    overflow: hidden;
+    &:hover,
+    &:focus {
+      // box-shadow: 0 6px 4px 0 #757575;
+      box-shadow: 7px -7px 21px rgb(255 107 1 / 60%);
+      opacity: 0.9;
+    }
+  }
+  & .footer-link:hover {
+    color: $accent-color;
+  }
+}
+.footer.dark-theme {
+  background-color: $footer-color-switch;
+}
+.js-footer.light-theme {
+  color: $primary-color;
+}
+.js-footer.dark-theme {
+  color: $theme-switch-color;
+}
+.js-footer-link.dark-theme {
+  color: $theme-switch-color;
+}
+.js-footer-link.light-theme {
+  color: $primary-color;
+}
+.js-footer-color.dark-theme {
+  color: $theme-switch-color;
+}
+.js-footer-color.light-theme {
+  color: $primary-color;
+}
+.js-goit.dark-theme {
+  color: $theme-switch-color;
+}
+.js-footer-color.light-theme {
+  color: $primary-color;
+}

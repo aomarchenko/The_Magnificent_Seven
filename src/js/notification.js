@@ -5,7 +5,7 @@ import * as PNotifyMobile from '@pnotify/mobile/dist/PNotifyMobile.js';
 
 import '@pnotify/mobile/dist/PNotifyMobile.css';
 
-export const notification = {
+export default {
   emptyInput() {
     alert({
       text: 'Opps! No request! Try again!',
@@ -27,6 +27,33 @@ export const notification = {
     alert({
       title: 'Error',
       text: 'Critical error has occured. Please, try your request later',
+      type: 'error',
+      delay: 1000,
+      hide: true,
+    });
+  },
+  loginError() {
+    alert({
+      title: 'Error',
+      text: 'Email or password is not correct',
+      type: 'error',
+      delay: 1000,
+      hide: true,
+    });
+  },
+  createUserSucces() {
+    alert({
+      title: 'Succes',
+      text: 'Account created succesfully',
+      type: 'error',
+      delay: 1000,
+      hide: true,
+    });
+  },
+  loginSucces() {
+    alert({
+      title: 'Succes',
+      text: 'Login success',
       type: 'error',
       delay: 1000,
       hide: true,

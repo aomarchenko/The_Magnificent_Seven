@@ -1,5 +1,5 @@
 import genres from './genres.json';
-
+import NProgress from 'nprogress';
 export default class DataBaseApi{
     constructor(){
 this.API_KEY = 'aa19f289e41f4e3ac70c0546f19e5928';
@@ -9,15 +9,25 @@ this.keyWordRequest = 'search/movie';
 this.page = 1;
 this.request = '';
 this.genres = genres;
+//Для пагінації//
+this.totalPages;
+this.totalResults;
+this.url = ''
     }
-async homePageFetch(){
-    try{
+    async homePageFetch() {
+     NProgress.start();
+    NProgress.configure({ ease: 'ease', speed: 800 });
+        NProgress.configure({ trickleRate: 0.02, trickleSpeed: 500 })
+         NProgress.done();
+    try {
+        
     let response = await fetch(`${this.BASE_URL}${this.trendingRequest}?api_key=${this.API_KEY}`);
     let data = await response.json();
-    let result = await data.results;
+        let result = await data.results;
     //  console.log(result);
         return result; 
     }     
+    
     catch (error){
         alert({
             text: 'error',
@@ -25,8 +35,34 @@ async homePageFetch(){
             hide: true,
             }); 
     }    
-    
+     NProgress.done();
 }
+
+//////////Додав fetch для пагінації щоб можна було дістати сторінки(Богдан)////////
+async searchPageFetch(request){
+    if (request && request !== '') {
+        this.url = `${this.BASE_URL}${this.keyWordRequest}?api_key=${this.API_KEY}&query='${this.request}&page=${this.page}`;}
+        else {
+        this.url = `${this.BASE_URL}${this.trendingRequest}?api_key=${this.API_KEY}&page=${this.page}`;
+    }  
+    try{ 
+    const response = await fetch(this.url);
+    const data = await response.json();
+    
+    this.totalPages = data.total_pages;
+    this.totalResults = data.total_results;
+
+    this.page = data.page;
+    
+    //console.log(data.page)
+    //console.log(data.total_pages);
+    //console.log(data);
+    return data;
+    }catch (error) {
+        console.log(error);
+    }
+}
+////////////////////////////////////////////////////////////////////
 
 async searchMovieFetch(){         
    try{
@@ -82,7 +118,7 @@ async searchMovieFetch(){
 //  }
 
 // getMovieObjectForRender(movieArray) {
-//     console.log(movieArray);
+//     console.log(movieArray.genres);
 //     if (!movieArray) {return}
 //     return {
 //         poster_path: movieArray.poster_path || movieArray.backdrop_path,
@@ -94,5 +130,23 @@ async searchMovieFetch(){
 //         vote_average: filmData.vote_average.toFixed(1),
 //     }
 
-// }
+// // }
+
+get requests (){
+    return this.request
 }
+
+set requests (newRequest){
+    this.request = newRequest
+}
+
+
+//incrementPage(){
+//this.page +=1
+    
+//}
+ 
+
+}
+/////Додав для зручності експорту/////
+export const dataBaseApi = new DataBaseApi();
