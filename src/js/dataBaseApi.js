@@ -36,6 +36,7 @@ this.url = ''
             }); 
     }    
      NProgress.done();
+
 }
 
 //////////Додав fetch для пагінації щоб можна було дістати сторінки(Богдан)////////
@@ -61,6 +62,7 @@ async searchPageFetch(request){
     }catch (error) {
         console.log(error);
     }
+
 }
 ////////////////////////////////////////////////////////////////////
 
@@ -132,6 +134,7 @@ async searchMovieFetch(){
 
 // // }
 
+
 get requests (){
     return this.request
 }
@@ -146,6 +149,7 @@ set requests (newRequest){
     
 //}
  
+
 
 }
 /////Додав для зручності експорту/////

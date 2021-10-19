@@ -37,9 +37,11 @@ return galleryItem = {
   genre_ids: genreName
 };
 })
+
 //movieList.insertAdjacentHTML('beforeend', movieCardTpl(items));
 
 ///рендер кожної сторінки/////
 movieList.innerHTML = movieCardTpl(items);
 //console.log(items)
+
 }
