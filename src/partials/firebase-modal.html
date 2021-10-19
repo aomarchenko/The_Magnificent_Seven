@@ -1,0 +1,35 @@
+<div class="login__backdrop is-hidden">
+  <div class="login__modal">
+    <button class="login__modal--btn-close">
+      <svg class="login__modal--close-svg" width="30" height="30">
+        <use href="./images/team/icons.svg#icon-close"></use>
+      </svg>
+    </button>
+
+    <form class="login">
+      <h2 class="login__title">Please LOGIN or CREATE an ACCOUNT</h2>
+      <div class="input__box">
+        <h3 class="input__name">Please type your email</h3>
+        <input
+          class="input__field email"
+          name="mailfield"
+          type="text"
+          placeholder="your_email@email.com"
+        />
+        <h3 class="input__name">Please type your password</h3>
+        <input
+          class="input__field password"
+          name="passwordfield"
+          type="text"
+          placeholder="password"
+        />
+      </div>
+      <div class="button__field">
+        <button type="submit" class="login_modal--btn-login" data-action="">LOGIN</button>
+        <button type="submit" class="login_modal--btn-create-acnt" data-action="">
+          CREATE AN ACCOUNT
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

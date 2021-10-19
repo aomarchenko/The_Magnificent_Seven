@@ -1,0 +1,249 @@
+.login__backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.login__backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+
+  width: 100%;
+  height: 100%;
+
+  background-color: rgba(0, 0, 0, 0.25);
+  opacity: 1;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.login__backdrop.is-hidden .login__modal {
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.dark-theme .login__modal--btn-close {
+  color: $film-icon-color;
+}
+
+.login__modal--btn-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+
+  cursor: pointer;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover,
+  &:focus {
+    color: $hover-color;
+  }
+}
+
+.login__modal--close-svg {
+  fill: currentColor;
+}
+
+.login__modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: $white-text-color;
+  height: 90%;
+  overflow-y: scroll;
+
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.backdrop.is-hidden .login__modal {
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.dark-theme .login__modal {
+  background-color: #333333;
+}
+
+.dark-theme .login__box {
+  background-color: #333333;
+}
+.input__box {
+  margin-top: 100px;
+}
+.input__field {
+  border-radius: 15px;
+  outline: none;
+  width: 300px;
+  height: 40px;
+  text-indent: 5px;
+  font-size: 20px;
+  border: 1px solid rgb(216, 213, 213);
+}
+.button__field {
+  margin-top: 50px;
+}
+
+.login_modal--btn-login,
+.login_modal--btn-create-acnt {
+  width: 180px;
+  height: 50px;
+  border: 1px solid rgb(216, 213, 213);
+  border-radius: 15px;
+  background-color: transparent;
+  color: black;
+  font-size: 15px;
+  transition-duration: 0.25s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover,
+  &:focus {
+    border: 1px solid #ff6b01;
+    background: #ff6b01;
+    box-shadow: 0 8px 43px rgb(255 107 1 / 60%);
+    transition-property: background-color;
+    transition-duration: 0.25s;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+  }
+}
+.login {
+  padding: 15px;
+  margin: 50px;
+  width: 270px;
+  color: $text-color;
+
+  @media screen and (min-width: $tablet) {
+    width: 540px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    width: 810px;
+  }
+}
+
+.login__title {
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 1.17;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.dark-theme .login__title {
+  color: $film-icon-color;
+}
+
+// .login__list {
+//   display: flex;
+//   justify-content: center;
+//   flex-wrap: wrap;
+
+//   @media screen and (min-width: $tablet) {
+//     margin-left: -30px;
+//     margin-top: -30px;
+//   }
+// }
+
+// .login__item {
+//   &:not(:first-child) {
+//     margin-top: 30px;
+//   }
+
+//   background-color: $white-text-color;
+//   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+//     0px 2px 1px rgba(0, 0, 0, 0.2);
+//   border-radius: 0px 0px 4px 4px;
+//   border-color: transparent;
+//   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+//   @media screen and (min-width: $tablet) {
+//     flex-basis: calc((100% - 2 * 30px) / 2);
+//     margin-left: 30px;
+//     margin-top: 30px;
+//   }
+
+//   @media screen and (min-width: $desktop) {
+//     flex-basis: calc((100% - 90px) / 3);
+//     margin-left: 30px;
+//     margin-top: 30px;
+//   }
+// }
+
+// .login__item:hover,
+// .login__item:focus {
+//   box-shadow: 0 4px 4px 0 $modal-description-color;
+// }
+
+// .login__box {
+//   padding: 10px;
+// }
+
+.input__name {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 16px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.dark-theme .input__name {
+  color: $film-icon-color;
+}
+
+// .login__info {
+//   display: flex;
+//   align-items: center;
+//   justify-content: space-between;
+// }
+
+// .login__proffesion {
+//   font-family: Roboto;
+//   font-style: normal;
+//   font-weight: 500;
+//   font-size: 12px;
+//   line-height: 16px;
+//   color: $accent-color;
+// }
+
+// .social {
+//   display: flex;
+// }
+
+// .social__item {
+//   &:not(:last-child) {
+//     margin-right: 5px;
+//   }
+// }
+
+// .dark-theme .social__link {
+//   &:hover,
+//   &:focus {
+//     color: $film-icon-color;
+//   }
+// }
+
+// .social__link {
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+
+//   width: 30px;
+//   height: 30px;
+//   border-radius: 5px;
+//   color: $accent-color;
+//   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+//   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+//   &:hover,
+//   &:focus {
+//     color: $white-text-color;
+//     background-color: $hover-color;
+//   }
+// }
+
+// .social__svg {
+//   fill: currentColor;
+// }
