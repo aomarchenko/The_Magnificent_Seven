@@ -201,3 +201,10 @@
     width: 136px;
   }
 }
+.color-switch {
+  stroke: $text-color;
+  &:hover,
+  &:focus {
+    stroke: $accent-color;
+  }
+}
