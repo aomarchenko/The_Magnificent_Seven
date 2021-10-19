@@ -6,10 +6,6 @@ body.light-theme {
 body.dark-theme {
   background-color: $primary-color;
   color: $white-text-color;
-}
-body.dark-theme {
-  background-color: #333333;
-  color: $white-text-color;
 
   & .library-button {
     color: $white-text-color;
@@ -22,8 +18,10 @@ body.dark-theme {
   & .arrow-right {
     stroke: darkgrey;
   }
-  & .modal__window {
-    background-color: #333333;
+  & .modal__window,
+  .team__modal,
+  .team__box {
+    background-color: $primary-color;
   }
   & .color-switch {
     stroke: $film-icon-color;
@@ -36,8 +34,25 @@ body.dark-theme {
   .modal__title,
   .modal__info-value,
   .modal__description,
-  .moda__about-title {
+  .moda__about-title,
+  .team__modal--btn-close,
+  .team__title,
+  .team__name {
     color: #cccccc;
+  }
+
+  .social__link {
+    &:hover,
+    &:focus {
+      color: #cccccc;
+    }
+  }
+
+  & .team__modal--btn-close {
+    &:hover,
+    &:focus {
+      color: $hover-color;
+    }
   }
 
   & .card__text {

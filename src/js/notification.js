@@ -32,4 +32,31 @@ export default {
       hide: true,
     });
   },
+  loginError() {
+    alert({
+      title: 'Error',
+      text: 'Email or password is not correct',
+      type: 'error',
+      delay: 1000,
+      hide: true,
+    });
+  },
+  createUserSucces() {
+    alert({
+      title: 'Succes',
+      text: 'Account created succesfully',
+      type: 'error',
+      delay: 1000,
+      hide: true,
+    });
+  },
+  loginSucces() {
+    alert({
+      title: 'Succes',
+      text: 'Login success',
+      type: 'error',
+      delay: 1000,
+      hide: true,
+    });
+  },
 };

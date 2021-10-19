@@ -8,9 +8,11 @@ import {
     queueBtn,
 } from '../refs/refs'
 
+
 // const watchedId = JSON.parse(localStorage.getItem('watch'));
 
 // console.log(watchedId);
+
 
 
 
@@ -22,12 +24,15 @@ import {
 
 
 
+
 // function fetchFilm(id) {
 //   fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=aa19f289e41f4e3ac70c0546f19e5928`)
 //     .then(res => {
 //       return res.json();
 //     })
     
+
+
     // .then(film => {
     //   const markup = movieCard(film);
     //   console.log(markup);
@@ -48,6 +53,7 @@ import {
 //   e.preventDefault(); 
 //   fetchFilm(watchedId);
 // }
+
 
 // function libraryRender(e) {  
 //   clickLibraryBtn();
