@@ -8,57 +8,59 @@ import {
     queueBtn,
 } from '../refs/refs'
 
-const watchedId = JSON.parse(localStorage.getItem('watch'));
+// const watchedId = JSON.parse(localStorage.getItem('watch'));
 
-console.log(watchedId);
-
-const queueId = localStorage.getItem('queue');
-
-
-pageLibaryBtn.addEventListener('click', libraryRender);
+// console.log(watchedId);
 
 
 
+// const queueId = localStorage.getItem('queue');
 
-function fetchFilm(id) {
-  fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=aa19f289e41f4e3ac70c0546f19e5928`)
-    .then(res => {
-      return res.json();
-    })
+
+// pageLibaryBtn.addEventListener('click', libraryRender);
+
+
+
+
+// function fetchFilm(id) {
+//   fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=aa19f289e41f4e3ac70c0546f19e5928`)
+//     .then(res => {
+//       return res.json();
+//     })
     
     // .then(film => {
     //   const markup = movieCard(film);
     //   console.log(markup);
     //   movieList.innerHTML = markup;
     // });
-}
+// }
 
 
-function clickLibraryBtn() {
-  galleryTps.innerHTML = '';
-}
+// function clickLibraryBtn() {
+//   galleryTps.innerHTML = '';
+// }
 
-function refreshPage() {
-  document.location.reload();
-}
+// function refreshPage() {
+//   document.location.reload();
+// }
 
 // function watchedRender(e) {
 //   e.preventDefault(); 
 //   fetchFilm(watchedId);
 // }
 
-function libraryRender(e) {  
-  clickLibraryBtn();
-  if (watchedId) {
-    fetchFilm(watchedId);
-  }
-  else {
-    const clearMarkup = libraryMistake();
-    galleryTps.insertAdjacentHTML('beforeend', clearMarkup);
-    const btnGoHome = document.querySelector('.library-button');
-    btnGoHome.addEventListener('click', refreshPage);
-  }
-}
+// function libraryRender(e) {  
+//   clickLibraryBtn();
+//   if (watchedId) {
+//     fetchFilm(watchedId);
+//   }
+//   else {
+//     const clearMarkup = libraryMistake();
+//     galleryTps.insertAdjacentHTML('beforeend', clearMarkup);
+//     const btnGoHome = document.querySelector('.library-button');
+//     btnGoHome.addEventListener('click', refreshPage);
+//   }
+// }
 
 
 
@@ -101,4 +103,3 @@ function libraryRender(e) {
 //   } 
 
 // }
-

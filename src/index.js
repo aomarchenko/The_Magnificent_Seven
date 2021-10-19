@@ -23,6 +23,7 @@ import './js/modal-window';
 
 import './js/render/renderHeader'
 import './js/render/renderLibrary'
+import './js/render/renderLibraryMy'
 import './js/localStorage';
 import './js/localStoragePage';
 
