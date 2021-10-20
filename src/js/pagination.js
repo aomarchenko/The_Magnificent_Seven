@@ -45,7 +45,7 @@ pagination.on('beforeMove', async event => {
     //console.log(dataBaseApi.request)
     //console.log(dataBaseApi.totalPages)
     //console.log(dataBaseApi.page)
-    const movie = await dataBaseApi.searchPageFetch(dataBaseApi.request);
+    const movie = await dataBaseApi.searchMovieFetch(dataBaseApi.request);
     
     //console.log(dataBaseApi.request)
     dataBaseApi.totalPages = movie.total_pages
@@ -59,7 +59,7 @@ pagination.on('beforeMove', async event => {
   
 const init = async total => {
   if (total === undefined && !totalItems)
-   totalItems = await dataBaseApi.searchPageFetch();
+   totalItems = await dataBaseApi.searchMovieFetch();
   
  if (total === undefined) total = totalItems.total_pages;
 
