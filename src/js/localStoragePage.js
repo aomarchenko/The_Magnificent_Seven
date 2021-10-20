@@ -48,5 +48,9 @@ conteinet.addEventListener('click', e => {
             films.splice(index, 1);
             e.target.textContent = 'Add to queue';
         }
+
+        localStorage.setItem('queue', JSON.stringify(films));
+
+            return { pushProduct, films };
     }
 })

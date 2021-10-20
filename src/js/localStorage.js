@@ -59,6 +59,3 @@ modal.addEventListener('click', (e) => {
 
     }
 })
-
-const filmLocalStorage = localStorage.getItem('watch');
-console.log(JSON.stringify(filmLocalStorage))
