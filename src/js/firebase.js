@@ -63,13 +63,10 @@
 
 //         const user = userCredential.user;
 
-
 //         loginForm.insertAdjacentHTML(
 //           'beforeend',
 //           '<p class="login__ok">Account created succesfully, now LOGIN please</p>',
 //         );
-
-
 
 //         notification.createUserSucces();
 //       })
@@ -78,7 +75,6 @@
 //         notification.loginError();
 //         const errorCode = error.code;
 //         const errorMessage = error.message;
-
 
 //       });
 //   } else if (e.target === loginButton) {
@@ -92,11 +88,9 @@
 //         libraryButtonToShow.classList.remove('is-hidden');
 //         loginButtonToHide.classList.add('is-hidden');
 
-        
 //         // При нажатии на login в localStorage сохраняется информация о клиенте
 //         localStorage.setItem('login-email', email)
 //         localStorage.setItem('login-password', password)
-
 
 //         setStorageValue();
 //         getStorageValue();
@@ -145,7 +139,7 @@
 //   }
 // }
 
-// // При нажатии на HOME, если в localStorage есть login, 
+// // При нажатии на HOME, если в localStorage есть login,
 // // с кнопки MY LIBRARY снимаеться класс 'is-hidden'
 // // buttonHome.addEventListener('click', (e)=>{
 // //   console.log(e);
@@ -154,7 +148,7 @@
 //     console.log(localStorage.getItem('login-email'));
 //     libraryButtonToShow.classList.remove('is-hidden');
 //     loginButtonToHide.classList.add('is-hidden');
-//   } 
+//   }
 // }
 // console.log(saveLogin());
 
@@ -201,6 +195,7 @@ export default function getStorageValue() {
     logOutButton.classList.remove('is-hidden');
 
     loginButtonToHide.classList.add('is-hidden');
+    clearStorageValue();
   }
 }
 function clearStorageValue() {
