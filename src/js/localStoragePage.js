@@ -17,7 +17,7 @@ conteinet.addEventListener('click', e => {
         const index = films.indexOf(id);
         if (index === -1) {
             films.push(id);
-            e.target.textContent = 'Remove to watched'; 
+            e.target.textContent = 'Remove from watched'; 
             pushProduct = true;
         } else {
             films.splice(index, 1);
@@ -42,7 +42,7 @@ conteinet.addEventListener('click', e => {
         const index = films.indexOf(id);
         if (index === -1) {
             films.push(id);
-            e.target.textContent = 'Remove to queue'; 
+            e.target.textContent = 'Remove from queue'; 
             pushProduct = true;
         } else {
             films.splice(index, 1);
