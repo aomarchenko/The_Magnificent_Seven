@@ -1,7 +1,7 @@
 import { initializeApp } from 'firebase/app';
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
 import notification from './notification';
-
+const debounce = require('lodash.debounce');
 const firebaseConfig = {
   apiKey: 'AIzaSyCoK0KbVR5F9Gbl47XCVO_8gFrP9bTN0K0',
   authDomain: 'imagefinder-5e9b7.firebaseapp.com',
@@ -15,6 +15,7 @@ const app = initializeApp(firebaseConfig);
 
 const auth = getAuth();
 
+const buttonHome = document.querySelector('.js-button-home');
 const loginBacdrop = document.querySelector('.login__backdrop');
 const body = document.querySelector('body');
 const closeLoginBtn = document.querySelector('.login__modal--btn-close');
@@ -24,13 +25,17 @@ const loginButton = document.querySelector('.login_modal--btn-login');
 const libraryButtonToShow = document.querySelector('.js-button-libary');
 const loginButtonToHide = document.querySelector('.js-button-login');
 const createAccountButton = document.querySelector('.login_modal--btn-create-acnt');
+const emailInput = document.querySelector ('.email');
+// console.log(emailInput);
+const passwordInput = document.querySelector('.password');
+// console.log(passwordInput);
 
 loginForm.addEventListener('click', onSubmit);
 loginLink.addEventListener('click', openModal);
 
 function onSubmit(e) {
   e.preventDefault(e);
-  //   console.log(e.target);
+    // console.log(e.target);
   let email = e.currentTarget.elements.mailfield.value;
   let password = e.currentTarget.elements.passwordfield.value;
   if (e.target === createAccountButton) {
@@ -60,12 +65,17 @@ function onSubmit(e) {
         // Signed in
         const user = userCredential.user;
         // ...
-
+console.log(user);
         console.log('ok');
         notification.loginSucces();
         closeModal();
         libraryButtonToShow.classList.remove('is-hidden');
         loginButtonToHide.classList.add('is-hidden');
+        
+        // При нажатии на login в localStorage сохраняется информация о клиенте
+        localStorage.setItem('login-email', email)
+        localStorage.setItem('login-password', password)
+     
       })
       .catch(error => {
         notification.loginError();
@@ -109,3 +119,16 @@ function onEsc(e) {
     closeModal();
   }
 }
+
+// При нажатии на HOME, если в localStorage есть login, 
+// с кнопки MY LIBRARY снимаеться класс 'is-hidden'
+// buttonHome.addEventListener('click', (e)=>{
+//   console.log(e);
+ function saveLogin(){
+    if(localStorage.getItem('login-email')){
+    console.log(localStorage.getItem('login-email'));
+    libraryButtonToShow.classList.remove('is-hidden');
+    loginButtonToHide.classList.add('is-hidden');
+  } 
+}
+console.log(saveLogin());
