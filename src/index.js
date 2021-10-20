@@ -1,4 +1,4 @@
-import './js/firebase';
+// import './js/firebase';
 import './sass/main.scss';
 import 'animate.css/animate.css';
 
