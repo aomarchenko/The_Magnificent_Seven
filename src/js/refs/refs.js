@@ -17,7 +17,11 @@ const linkGoit = document.querySelector('.js-goit');
 const teamLink = document.querySelector('.footer__link');
 const teamBackdrop = document.querySelector('.team__backdrop');
 const closeTeamBtn = document.querySelector('.team__modal--btn-close');
-const galleryTps = document.querySelector('.container')
+const galleryTps = document.querySelector('.container');
+const watchedBtn = document.querySelector('.watched-js');
+const queueBtn = document.querySelector('.queue-js');
+const libraryBox = document.querySelector('.library-box');
+
 
 export {
   movieList,
@@ -39,5 +43,8 @@ export {
   teamBackdrop,
   closeTeamBtn,
   galleryTps,
+  watchedBtn,
+  queueBtn,
+  libraryBox,
 };
 

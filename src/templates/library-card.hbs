@@ -1,0 +1,19 @@
+<li class="movie__item" data-id={{id}}>
+    <a class='movie__link' href='./' data-id={{id}}>
+        <div class='movie__thumb'>
+            <img class='movie__img' src='https://image.tmdb.org/t/p/w500{{poster_path}}' alt='{{title}}' width='274'
+                height='398' data-id='{{id}}' />
+        </div>
+        <div class='movie__text'>
+            <h2 class='movie__title' data-id="{{id}}">{{original_title}}</h2>
+            <p class='movie__genre'>{{genre_ids}} | {{release_date}} | {{vote_average}}</p>
+        </div>
+        <div class='one-card_overlay'>
+            <button type='button' id='{{id}}' class='btn_one-card js-watch' data-action=''>Add to
+                watched</button>
+            <button type='button' id='{{id}}' class='btn_one-card js-queque' data-action=''>Add to
+                queque</button>
+        </div>
+    </a>
+    </article>
+</li>
