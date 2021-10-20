@@ -39,7 +39,7 @@ this.url = ''
 
 }
 
-//////////Додав fetch для пагінації щоб можна було дістати сторінки(Богдан)////////
+//////////Додав fetch для пагінації щоб можна було дістати сторінки////////
 async searchMovieFetch(request){
     if (request && request !== '') {
         this.url = `${this.BASE_URL}${this.keyWordRequest}?api_key=${this.API_KEY}&query='${this.request}&page=${this.page}`;}
@@ -59,10 +59,13 @@ async searchMovieFetch(request){
     //console.log(data.total_pages);
     //console.log(data);
     return data;
-    }catch (error) {
-        console.log(error);
-    }
-
+    }catch (error){
+         alert({
+         text: 'error',
+         delay: 1000,
+         hide: true,
+         }); 
+        }    
 }
 ////////////////////////////////////////////////////////////////////
 

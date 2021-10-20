@@ -20,17 +20,18 @@ export const onSearchResult = async (e) => {
 
   let promisMoviesArray = await dataBaseApi.searchMovieFetch(dataBaseApi.request);
 
-  console.log(promisMoviesArray.results);
+  //console.log(promisMoviesArray.results);
+
     if (promisMoviesArray.results.length === 0) {
      return notification.specifyRequest()
     } else if(promisMoviesArray === undefined) {
      notification.criticalError();
-   }
+    }
       movieList.innerHTML = '';
       createMovieGalleryMarkup(promisMoviesArray.results);
       pagination.reset();
+  
   //let promisMoviesArray = dataBaseApi.searchMovieFetch(dataBaseApi.request);
-
   //promisMoviesArray
   ////.then(array=>{
     //if (array.length === 0) {
