@@ -19,7 +19,7 @@ modal.addEventListener('click', (e) => {
         const index = films.indexOf(id);
         if (index === -1) {
             films.push(id);
-            e.target.textContent = 'REMOVE TO QUEUE'; 
+            e.target.textContent = 'REMOVE FROM QUEUE'; 
             pushProduct = true;
         } else {
             films.splice(index, 1);
@@ -47,7 +47,7 @@ modal.addEventListener('click', (e) => {
         const index = films.indexOf(id);
         if (index === -1) {
             films.push(id);
-            e.target.textContent = 'REMOVE TO WATCHED'; 
+            e.target.textContent = 'REMOVE FROM WATCHED'; 
             pushProduct = true;
         } else {
             films.splice(index, 1);
