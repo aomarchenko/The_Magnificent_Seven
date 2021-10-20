@@ -153,7 +153,12 @@
 // console.log(saveLogin());
 
 import { initializeApp } from 'firebase/app';
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  onAuthStateChanged,
+} from 'firebase/auth';
 import notification from './notification';
 
 const firebaseConfig = {
@@ -217,6 +222,7 @@ function onSubmit(e) {
         );
 
         notification.createUserSucces();
+        onAuthStateChanged();
       })
 
       .catch(error => {
@@ -243,6 +249,18 @@ function onSubmit(e) {
       });
   }
 }
+onAuthStateChanged(auth, user => {
+  if (user) {
+    // User is signed in, see docs for a list of available properties
+    // https://firebase.google.com/docs/reference/js/firebase.User
+    const uid = user.uid;
+    // ...
+    console.log(uid);
+  } else {
+    // User is signed out
+    // ...
+  }
+});
 
 function openModal(event) {
   event.preventDefault();
