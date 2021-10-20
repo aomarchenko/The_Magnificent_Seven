@@ -38,16 +38,16 @@ function onLibraryClick() {
     //console.log(container)
     
     if (!watchedId && !queuedId) {
-            queueBtn.classList.remove('btn--is-active');
-            watchedBtn.classList.remove('btn--is-active')
+        queueBtn.classList.remove('btn--is-active');
+        watchedBtn.classList.remove('btn--is-active')
         onEmptyLocal();
-        }
+    }
     else if (watchedId && queuedId) {
             onWatchedClick();
         }
     else if (watchedId && !queuedId) {
             onWatchedClick();
-           } 
+    }
         else {
             onQueueClick();
         }
