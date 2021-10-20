@@ -30,26 +30,47 @@ const emailInput = document.querySelector ('.email');
 const passwordInput = document.querySelector('.password');
 // console.log(passwordInput);
 
+const headerNav = document.querySelector('header-nav');
+const logOutButton = document.querySelector('.js-button-logout');
+logOutButton.addEventListener('click', clearStorageValue());
 loginForm.addEventListener('click', onSubmit);
 loginLink.addEventListener('click', openModal);
+const homeLink = document.querySelector('.js-button-home');
 
+function setStorageValue() {
+  localStorage.setItem('islogin', true);
+}
+
+export default function getStorageValue() {
+  localStorage.getItem('islogin');
+  if (true) {
+    logOutButton.classList.remove('is-hidden');
+
+    loginButtonToHide.classList.add('is-hidden');
+  }
+}
+function clearStorageValue() {
+  localStorage.removeItem('islogin');
+}
 function onSubmit(e) {
   e.preventDefault(e);
-    // console.log(e.target);
+
   let email = e.currentTarget.elements.mailfield.value;
   let password = e.currentTarget.elements.passwordfield.value;
   if (e.target === createAccountButton) {
     createUserWithEmailAndPassword(auth, email, password)
       .then(userCredential => {
-        // Signed in
+
         const user = userCredential.user;
-        // ...
+
 
         loginForm.insertAdjacentHTML(
           'beforeend',
           '<p class="login__ok">Account created succesfully, now LOGIN please</p>',
         );
-        console.log('ok');
+
+
+
         notification.createUserSucces();
       })
 
@@ -57,25 +78,29 @@ function onSubmit(e) {
         notification.loginError();
         const errorCode = error.code;
         const errorMessage = error.message;
-        // ..
+
+
       });
   } else if (e.target === loginButton) {
     signInWithEmailAndPassword(auth, email, password)
       .then(userCredential => {
-        // Signed in
+
         const user = userCredential.user;
-        // ...
-console.log(user);
-        console.log('ok');
+
         notification.loginSucces();
         closeModal();
         libraryButtonToShow.classList.remove('is-hidden');
         loginButtonToHide.classList.add('is-hidden');
+
         
         // При нажатии на login в localStorage сохраняется информация о клиенте
         localStorage.setItem('login-email', email)
         localStorage.setItem('login-password', password)
-     
+
+
+        setStorageValue();
+        getStorageValue();
+
       })
       .catch(error => {
         notification.loginError();

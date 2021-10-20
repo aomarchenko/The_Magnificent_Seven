@@ -17,13 +17,17 @@ conteinet.addEventListener('click', e => {
         const index = films.indexOf(id);
         if (index === -1) {
             films.push(id);
+            e.target.textContent = 'Remove to watched'; 
             pushProduct = true;
-
+        } else {
+            films.splice(index, 1);
+            e.target.textContent = 'Add to watched';
+        }
             localStorage.setItem('watch', JSON.stringify(films));
 
             return { pushProduct, films };
 
-        }
+    
     } else if (e.target.classList.contains('js-queque')) {
         function getCartData() {
         const filmLocalStorage = localStorage.getItem('queue');
@@ -38,12 +42,11 @@ conteinet.addEventListener('click', e => {
         const index = films.indexOf(id);
         if (index === -1) {
             films.push(id);
+            e.target.textContent = 'Remove to queue'; 
             pushProduct = true;
-
-            localStorage.setItem('queue', JSON.stringify(films));
-
-            return { pushProduct, films };
-
+        } else {
+            films.splice(index, 1);
+            e.target.textContent = 'Add to queue';
         }
     }
 })

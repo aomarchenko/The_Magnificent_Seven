@@ -9,6 +9,10 @@ this.keyWordRequest = 'search/movie';
 this.page = 1;
 this.request = '';
 this.genres = genres;
+//Для пагінації//
+this.totalPages;
+this.totalResults;
+this.url = ''
     }
     async homePageFetch() {
      NProgress.start();
@@ -32,7 +36,35 @@ this.genres = genres;
             }); 
     }    
      NProgress.done();
+
 }
+
+//////////Додав fetch для пагінації щоб можна було дістати сторінки(Богдан)////////
+async searchPageFetch(request){
+    if (request && request !== '') {
+        this.url = `${this.BASE_URL}${this.keyWordRequest}?api_key=${this.API_KEY}&query='${this.request}&page=${this.page}`;}
+        else {
+        this.url = `${this.BASE_URL}${this.trendingRequest}?api_key=${this.API_KEY}&page=${this.page}`;
+    }  
+    try{ 
+    const response = await fetch(this.url);
+    const data = await response.json();
+    
+    this.totalPages = data.total_pages;
+    this.totalResults = data.total_results;
+
+    this.page = data.page;
+    
+    //console.log(data.page)
+    //console.log(data.total_pages);
+    //console.log(data);
+    return data;
+    }catch (error) {
+        console.log(error);
+    }
+
+}
+////////////////////////////////////////////////////////////////////
 
 async searchMovieFetch(){         
    try{
@@ -101,4 +133,24 @@ async searchMovieFetch(){
 //     }
 
 // // }
+
+
+get requests (){
+    return this.request
 }
+
+set requests (newRequest){
+    this.request = newRequest
+}
+
+
+//incrementPage(){
+//this.page +=1
+    
+//}
+ 
+
+
+}
+/////Додав для зручності експорту/////
+export const dataBaseApi = new DataBaseApi();
