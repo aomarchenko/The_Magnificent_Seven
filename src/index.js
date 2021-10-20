@@ -1,3 +1,4 @@
+import './js/firebase';
 import './sass/main.scss';
 import 'animate.css/animate.css';
 
@@ -21,4 +22,3 @@ import './js/render/renderLibrary';
 
 import './js/localStorage';
 import './js/localStoragePage';
-// import './js/firebase';
