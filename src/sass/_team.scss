@@ -119,8 +119,14 @@
   box-shadow: 0 4px 4px 0 $modal-description-color;
 }
 
+.team__photo {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
 .team__box {
   padding: 10px;
+  border-radius: 5px;
 }
 
 .team__name {
