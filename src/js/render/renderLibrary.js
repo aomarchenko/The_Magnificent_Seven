@@ -8,6 +8,7 @@ import {
     libraryBox,
 } from '../refs/refs'
 
+import {container} from '../pagination'
 
 pageLibaryBtn.addEventListener('click', onLibraryClick);
 watchedBtn.addEventListener('click', onWatchedClick);
@@ -26,7 +27,6 @@ fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=aa19f289e41f4e3ac70c0546
     const markup = libraryCard(film);
         console.log(markup);
         movieList.insertAdjacentHTML('beforeend', markup);
-        
     });
 }
 function onLibraryClick() {
@@ -34,6 +34,8 @@ function onLibraryClick() {
     const queuedId = JSON.parse(localStorage.getItem('queue'));
     clearPage();
     addLibraryBtn();
+    container.classList.add('display-none');
+    //console.log(container)
     
     if (!watchedId && !queuedId) {
             queueBtn.classList.remove('btn--is-active');

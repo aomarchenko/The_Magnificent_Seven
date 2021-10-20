@@ -30,15 +30,16 @@ const options = {
     }
   };
 
-const container = document.getElementById('pagination');
+export const container = document.getElementById('pagination');
 const pagination = new Pagination(container, options);
 
 
-///////////////////основні функції///////////
+///////////////////основні функції/////////////////
 
 
 pagination.on('beforeMove', async event => {
     const currentPage = event.page;
+    
     dataBaseApi.request = formRef.value.trim();
     dataBaseApi.page = currentPage;
     
@@ -64,7 +65,7 @@ const init = async total => {
  if (total === undefined) total = totalItems.total_pages;
 
  //console.log(total)
-  
+ 
  pagination.setTotalItems(total);
  pagination.reset();
 };
