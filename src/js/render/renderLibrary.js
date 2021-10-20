@@ -9,9 +9,11 @@ import {
 } from '../refs/refs'
 
 
-pageLibaryBtn.addEventListener('click', onWatchedClick);
+pageLibaryBtn.addEventListener('click', onLibraryClick);
 watchedBtn.addEventListener('click', onWatchedClick);
 queueBtn.addEventListener('click', onQueueClick);
+
+
 
 
 
@@ -27,42 +29,57 @@ fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=aa19f289e41f4e3ac70c0546
         
     });
 }
-function onWatchedClick() {
+function onLibraryClick() {
+    const watchedId = JSON.parse(localStorage.getItem('watch'));
+    const queuedId = JSON.parse(localStorage.getItem('queue'));
     clearPage();
     addLibraryBtn();
-    queueBtn.classList.remove('btn--is-active');
-    watchedBtn.classList.add('btn--is-active')
-    const watchedId = JSON.parse(localStorage.getItem('watch'));
     
-        if (!watchedId) {
-        const clearMarkup = libraryMistake();
-        movieList.insertAdjacentHTML('beforeend', clearMarkup);
-        const btnGoHome = document.querySelector('.library-button');
-        btnGoHome.addEventListener('click', refreshPage);
+    if (!watchedId && !queuedId) {
+            queueBtn.classList.remove('btn--is-active');
+            watchedBtn.classList.remove('btn--is-active')
+        onEmptyLocal();
         }
+    else if (watchedId && queuedId) {
+            onWatchedClick();
+        }
+    else if (watchedId && !queuedId) {
+            onWatchedClick();
+           } 
         else {
-            for (let id of watchedId) {
-                fetchMovieById(id);
-                
-        }
+            onQueueClick();
         }
 }
+
+
 function onQueueClick() {
     clearPage();
+        const queuedId = JSON.parse(localStorage.getItem('queue'));
         watchedBtn.classList.remove('btn--is-active');
         queueBtn.classList.add('btn--is-active');
-    const queuedId = JSON.parse(localStorage.getItem('queue'));
     if (!queuedId) {
-        const clearMarkup = libraryMistake();
-        movieList.insertAdjacentHTML('beforeend', clearMarkup);
-        const btnGoHome = document.querySelector('.library-button');
-        btnGoHome.addEventListener('click', refreshPage);
+        onEmptyLocal()
         }
         else {
             for (let id of queuedId) {
                 fetchMovieById(id);               
         }
         }  
+}
+
+function onWatchedClick() {
+    clearPage();
+    const watchedId = JSON.parse(localStorage.getItem('watch'));
+    watchedBtn.classList.add('btn--is-active');
+    queueBtn.classList.remove('btn--is-active');
+    if (!watchedId) {
+        onEmptyLocal();
+    }
+    else {
+        for (let id of watchedId) {          
+         fetchMovieById(id);            
+         }
+    }
 }
 
 
@@ -76,4 +93,10 @@ function clearPage() {
 
 function refreshPage() {
   document.location.reload();
+}
+function onEmptyLocal() {
+    const clearMarkup = libraryMistake();
+    movieList.insertAdjacentHTML('beforeend', clearMarkup);
+    const btnGoHome = document.querySelector('.library-button');
+    btnGoHome.addEventListener('click', refreshPage);
 }
