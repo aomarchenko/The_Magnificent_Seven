@@ -10,7 +10,7 @@ import pagination from '../js/pagination'
 const debounce = require('lodash.debounce');
 const dataBaseApi = new DataBaseApi();
 
-export const onSearchResult = (e) => {
+export const onSearchResult = async (e) => {
   e.preventDefault();
   dataBaseApi.request = formRef.value.trim();
 
@@ -18,29 +18,34 @@ export const onSearchResult = (e) => {
 
   if (!dataBaseApi.request) return;
 
-  
-  let promisMoviesArray = dataBaseApi.searchMovieFetch(dataBaseApi.request);
+  let promisMoviesArray = await dataBaseApi.searchMovieFetch(dataBaseApi.request);
 
-  promisMoviesArray
-  .then(array=>{
-    if (array.length === 0) {
-      return notification.specifyRequest()
+  //console.log(promisMoviesArray.results);
+
+    if (promisMoviesArray.results.length === 0) {
+     return notification.specifyRequest()
+    } else if(promisMoviesArray === undefined) {
+     notification.criticalError();
     }
-    if (array.length >= 1) {
       movieList.innerHTML = '';
-      createMovieGalleryMarkup(array);
-
-      
-   
+      createMovieGalleryMarkup(promisMoviesArray.results);
       pagination.reset();
-
-
-    }
-
-  })
-    .catch(() => {
-      notification.criticalError();
-    });
+  
+  //let promisMoviesArray = dataBaseApi.searchMovieFetch(dataBaseApi.request);
+  //promisMoviesArray
+  ////.then(array=>{
+    //if (array.length === 0) {
+     // return notification.specifyRequest()
+   // }
+   // if (array.length >= 1) {
+     // movieList.innerHTML = '';
+     // createMovieGalleryMarkup(array);
+     // pagination.reset();
+   // }
+ // })
+  //  .catch(() => {
+   //   notification.criticalError();
+   // });
 }
 formRef.addEventListener('input', debounce(onSearchResult, 500));
 

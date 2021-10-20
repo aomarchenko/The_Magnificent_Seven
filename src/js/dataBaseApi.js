@@ -39,8 +39,8 @@ this.url = ''
 
 }
 
-//////////Додав fetch для пагінації щоб можна було дістати сторінки(Богдан)////////
-async searchPageFetch(request){
+//////////Додав fetch для пагінації щоб можна було дістати сторінки////////
+async searchMovieFetch(request){
     if (request && request !== '') {
         this.url = `${this.BASE_URL}${this.keyWordRequest}?api_key=${this.API_KEY}&query='${this.request}&page=${this.page}`;}
         else {
@@ -59,29 +59,32 @@ async searchPageFetch(request){
     //console.log(data.total_pages);
     //console.log(data);
     return data;
-    }catch (error) {
-        console.log(error);
-    }
-
+    }catch (error){
+         alert({
+         text: 'error',
+         delay: 1000,
+         hide: true,
+         }); 
+        }    
 }
 ////////////////////////////////////////////////////////////////////
 
-async searchMovieFetch(){         
-   try{
-    let response = await fetch(`${this.BASE_URL}${this.keyWordRequest}?api_key=${this.API_KEY}&query='${this.request}'`)
-    let data = await response.json();
-    let result = await data.results
+//async searchMovieFetch(){         
+  // try{
+   // let response = await fetch(`${this.BASE_URL}${this.keyWordRequest}?api_key=${this.API_KEY}&query='${this.request}'`)
+    //let data = await response.json();
+   // let result = await data.results
    
-           return result;
-   }
-   catch (error){
-    alert({
-        text: 'error',
-        delay: 1000,
-        hide: true,
-        }); 
-}    
-}
+         // return result;
+  // }
+  // catch (error){
+    //alert({
+       // text: 'error',
+       // delay: 1000,
+       // hide: true,
+       // }); 
+//}    
+//}
 
 // async getGenresList() {
 //     try{
