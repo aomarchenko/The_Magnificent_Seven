@@ -27,6 +27,7 @@
   }
   
   .tui-pagination .tui-page-btn {
+    background: rgb(247, 247, 247, 0.5);
     font-weight: 700 !important;
     line-height: 1.333 !important;
     border: none !important;
@@ -34,6 +35,8 @@
     width: 38px !important;
     height: 38px !important;
     padding-top: 13px !important;
+    margin-right: 1px !important;
+    margin-left: 1px !important;
   
     @media screen and (min-width: 480px) {
       width: 40px !important;
@@ -42,7 +45,8 @@
   
     &:hover,
     &:focus {
-      background-color: $white-text-color !important;
+      background-color: $hover-color !important;
+      color: $text-color !important;
     }
   }
   
@@ -65,7 +69,8 @@
   
     &:hover,
     &:focus {
-      background-color: $background-alternative-color !important;
+      background-color: $hover-color !important;
+      color: $text-color !important;
     }
   }
   
@@ -82,7 +87,8 @@
   
     &:hover,
     &:focus {
-      background-color: $background-alternative-color !important;
+      background-color: $hover-color !important;
+      color: $text-color !important;
     }
   }
   
@@ -97,7 +103,8 @@
   
     &:hover,
     &:focus {
-      background-color: $background-alternative-color !important;
+      background-color: $hover-color !important;
+      color: $text-color !important;
     }
   }
   

@@ -30,7 +30,7 @@ const options = {
     }
   };
 
-const container = document.getElementById('pagination');
+export const container = document.getElementById('pagination');
 const pagination = new Pagination(container, options);
 
 
